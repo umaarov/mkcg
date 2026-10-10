@@ -60,7 +60,7 @@ export default function System() {
           </> : <Dim>Run eval/run_eval.py</Dim>}
           <KV k="Engine" v={s.ocr.engine} />
         </Mod>
-        <Mod name="StatementGate" role="Cash-flow analytics (no LLM)" ok>
+        <Mod name="Statement" role="Cash-flow analytics (no LLM)" ok>
           {all ? <><KV k="Payment-purpose category accuracy" v={P(all.stmt_category_acc)} /><KV k="Median error, avg inflow" v={P(all.median_rel_err_op_inflow, 2)} /><KV k="Median error, net cash flow" v={P(all.median_rel_err_net_cf, 2)} /></> : null}
         </Mod>
         <Mod name="RevenueGate" role="Declared vs account" ok>
@@ -114,11 +114,27 @@ export default function System() {
           </div>
         </Card>
       )}
+      {ev?.llm && (
+        <Card className="mt-6" pad={false}>
+          <div className="border-b border-line px-5 py-4"><H sub={`Same ${ev.llm.n_cases} scan and photo cases and seeds as above, rerun with the PII-masked text fallback (${ev.llm.mode}). The model sees OCR text only, never images, and every output is re-validated.`}>What the model adds on degraded documents</H></div>
+          <div className="overflow-x-auto scroll-thin">
+            <table className="dense w-full text-[12.5px]">
+              <thead><tr><th>Slice</th><th>Metric</th><th className="text-right">Rules only</th><th className="text-right">+ LLM fallback</th></tr></thead>
+              <tbody>
+                {["deg=scan", "deg=photo"].flatMap((g) => [["stmt_row_recall", "Statement rows recovered"], ["stmt_header_field_acc", "Statement header fields"], ["decl_field_acc", "Declaration fields"], ["reg_field_acc", "Registration fields"]].map(([k, label]) => (
+                  <tr key={g + k}><td className="font-medium">{g}</td><td>{label}</td><td className="tnum text-right">{P(ev.summary[g][k], 1)}</td><td className="tnum text-right">{P(ev.llm.summary[g][k], 1)}</td></tr>
+                )))}
+              </tbody>
+            </table>
+          </div>
+          <p className="px-5 py-3 text-[12px] text-muted">Honest reading: the fallback repairs identity and tax fields on photos, but it cannot recover statement rows that OCR never read, so the officer flag stays on. A vision model in the bank&apos;s own perimeter is the designed next step.</p>
+        </Card>
+      )}
       {calls.length > 0 && (
         <Card className="mt-6" pad={false}>
           <div className="border-b border-line px-5 py-3 text-[13px] font-medium">Recent model calls (Router log)</div>
           <table className="dense w-full text-[12.5px]"><thead><tr><th>Purpose</th><th>Provider</th><th>Model</th><th className="text-right">Tokens in/out</th><th className="text-right">Seconds</th><th className="text-right">Cost</th></tr></thead>
-            <tbody>{calls.slice().reverse().slice(0, 12).map((c, i) => <tr key={i}><td>{c.purpose}</td><td>{c.provider}</td><td>{c.model}</td><td className="tnum text-right">{c.tokens_in}/{c.tokens_out}</td><td className="tnum text-right">{c.seconds}</td><td className="tnum text-right">${c.cost_usd.toFixed(4)}</td></tr>)}</tbody></table>
+            <tbody>{calls.slice().reverse().slice(0, 12).map((c, i) => <tr key={i}><td>{c.purpose}</td><td>{c.provider}</td><td>{c.model}</td><td className="tnum text-right">{c.tokens_in}/{c.tokens_out}</td><td className="tnum text-right">{c.seconds}</td><td className="tnum text-right">{c.cost_usd > 0 || c.provider === "local" ? `$${c.cost_usd.toFixed(4)}` : "unpriced"}</td></tr>)}</tbody></table>
         </Card>
       )}
       {pub && <Card className="mt-6"><H>FGate public key</H><pre className="overflow-x-auto rounded-lg bg-surface-2 p-3 font-mono text-[11px] text-ink-2">{pub.pem}</pre></Card>}

@@ -24,6 +24,8 @@ class Settings(BaseSettings):
     openai_api_key: str = ""
     openai_extraction_model: str = "deepseek-chat"
     openai_memo_model: str = "deepseek-chat"
+    # Re-reading statement ROWS with a model changed 1 of 54 degraded cases (for the worse) and adds many sequential calls, so it is off.
+    llm_statement_rows: bool = False
     local_base_url: str = ""  # OpenAI-compatible endpoint (vLLM / Ollama) for the on-prem path
     local_model: str = "qwen2.5-7b-instruct"
 

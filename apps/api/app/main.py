@@ -468,7 +468,11 @@ def router_calls(user: dict = Depends(auth.current_user)):
 def eval_results(user: dict = Depends(auth.current_user)):
     if not EVAL_PATH.exists():
         raise HTTPException(404, "eval not run yet")
-    return json.loads(EVAL_PATH.read_text())
+    out = json.loads(EVAL_PATH.read_text())
+    llm = EVAL_PATH.with_name("latest_llm.json")
+    if llm.exists():  # same seeds as the rules-only run, scan and photo slices, with the PII-masked LLM fallback enabled
+        out["llm"] = json.loads(llm.read_text())
+    return out
 
 
 @app.get("/api/portfolio")

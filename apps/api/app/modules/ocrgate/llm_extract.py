@@ -1,6 +1,7 @@
 """LLM fallback for layouts the deterministic parsers do not know. Always PII-masked, always re-validated."""
 from __future__ import annotations
 
+from ...config import settings
 from ..piimodule.mask import Masker
 from ..router import gateway
 from ..statement.categorize import categorize
@@ -68,7 +69,7 @@ def llm_fallback(doc_type: str, pages: list[Page], fields: dict[str, FieldOut], 
                 fields[k] = FieldOut(k, parse_amount(str(v)) if k in ("opening", "closing") and isinstance(v, str) else v,
                                      0.75, "", pg, bb, "llm")
             structured_ok = len(txs) >= 5 and not any(x["rule"] == "rows_chain_consistent" and not x["ok"] for x in validations)
-            if not structured_ok:
+            if not structured_ok and settings.llm_statement_rows:
                 new: list[TxOut] = []
                 for i in range(0, len(all_lines), 110):
                     chunk = "\n".join(all_lines[i:i + 110])
