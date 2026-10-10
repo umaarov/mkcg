@@ -1,5 +1,20 @@
+# Automatic HTTPS (Let's Encrypt, ZeroSSL fallback) for $PUBLIC_HOST, e.g. 169-58-113-253.sslip.io (resolves to the IP, no domain needed).
 {$PUBLIC_HOST} {
 	encode zstd gzip
-	request_body { max_size 40MB }
-	reverse_proxy web:3000
+	request_body {
+		max_size 40MB
+	}
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "SAMEORIGIN"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		-Server
+	}
+	reverse_proxy web:3000 {
+		transport http {
+			read_timeout 300s
+		}
+	}
 }

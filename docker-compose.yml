@@ -45,9 +45,11 @@ services:
     profiles: [ https ]
     restart: unless-stopped
     depends_on: [ web ]
-    ports: [ "80:80", "443:443" ]
+    ports: [ "80:80", "443:443", "443:443/udp" ]
     environment: { PUBLIC_HOST: "${PUBLIC_HOST:-localhost}" }
     volumes: [ "./deploy/Caddyfile:/etc/caddy/Caddyfile:ro", "caddy_data:/data" ]
+    mem_limit: 128m
+    logging: *log
 volumes:
   cg_data:
   caddy_data:

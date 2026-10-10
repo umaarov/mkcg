@@ -10,12 +10,12 @@ Loan officers upload an applicant's messy documents (bank statement, tax declara
 > The LLM never decides and never calculates. It reads (only as a fallback), and it writes (under a numeric verifier). Every number on screen is produced by deterministic code and links back to a highlighted region of the source document.
 
 ## Live demo
-https://tagged-removable-blowing-atmosphere.trycloudflare.com — click **Continue as demo officer**, then open a sample applicant. Demo accounts: `officer1`, `committee1`, `admin1` / `creditgateway`.
+https://169-58-113-253.sslip.io — click **Continue as demo officer**, then open a sample applicant. Demo accounts: `officer1`, `committee1`, `admin1` / `creditgateway`.
 
 ## Modules (all live in this repo)
 | Module | What it does | Where |
 |---|---|---|
-| **OCRGate** | classify document, text layer or OCR (Tesseract uzb+uzb_cyrl+rus, deskew, lighting normalisation), deterministic parsers with *balance-chain repair*, optional LLM fallback | `app/modules/ocrgate` |
+| **OCRGate** | classify document, text layer or OCR (Tesseract uzb+uzb_cyrl+rus, deskew, lighting normalisation); inputs: PDF, JPG/PNG, Excel (.xlsx) and CSV (sheets are rendered to a text-layer PDF so one pipeline and the evidence viewer cover everything), deterministic parsers with *balance-chain repair*, optional LLM fallback | `app/modules/ocrgate` |
 | **Statement** | multilingual payment-purpose categorisation, cash-flow analytics, circular-inflow detection, affordability | `app/modules/statement` |
 | **RevenueGate** | declared revenue vs money that actually reached the account | `app/modules/revenuegate` |
 | **RulesEngine** | 20 policy rules as YAML, PASS/REFER/FAIL with evidence | `app/modules/rulesengine` |
@@ -39,7 +39,7 @@ PII masking recall 98.7% over 623 identifier occurrences. Scoring model (synthet
 
 ### Known failure cases (we show them on purpose)
 * **Phone photos at our harsh setting recover only about a third of statement rows** with rules alone. The system raises a data-quality flag (rule R20, banner on the case page) and tells the officer to re-capture or upload the PDF; on our test set **no extraction below 90 % row recall went unflagged (0 silent failures)** — but the flag is conservative: every scan and photo is flagged, so it is a safety net for the officer, not a precision tool (see the “Flagged / Silent failures” columns on the System page). We measured the PII-masked **text** fallback (DeepSeek, same 27 photo cases, `eval/results/latest_llm.json`): it repairs identity and tax fields — registration 80% → 98%, statement header 77% → 90%, declaration 42% → 58% — but **statement rows stay at 32.5%**, because a text model cannot recover rows OCR never read. Letting the model re-read rows changed 1 of 54 degraded cases, for the worse, so it is off by default (`CG_LLM_STATEMENT_ROWS`). Scans are unchanged (93.3%). Measured on the deployed server: about 2 model calls and ~1,400 input / ~200 output tokens per degraded case. The real fix for photos is a vision model inside the bank's perimeter (needs a GPU; not built).
-* Layouts are *approximations* we wrote; real bank/tax templates will differ. Unknown layouts are what the LLM fallback is for.
+* Our own layouts A/B/C are *approximations* we wrote; real bank/tax templates will differ. We therefore tested against layouts the generator never produced (`apps/api/tests/foreign_layouts.py`: running row number and document number before the date, `1.234.567,00` amounts, wrapped purposes, newest-first order with the closing balance above the table, a totals line, repeated headers, different header labels). **Before we fixed it, the parser read 0 of 239 rows from such a statement; now it reads at least 98%** (asserted in CI), from a PDF, an Excel export, a CSV (cp1251, `;`) and a JPEG photo of the page (≥ 85% of the rows on the photographed page). This is still one family of layouts we wrote ourselves, not a sample of real bank exports: a real jury file may still fail, in which case the officer flag and the model fallback apply.
 * The scoring model and Signals measure how well the pipeline recovers a **simulated** default process. They say nothing about real Uzbek SME default rates.
 * PyMuPDF is AGPL-3.0; a production deployment needs its commercial licence or a swap to pypdfium2.
 
@@ -58,7 +58,7 @@ sh scripts/get_tessdata.sh            # Tesseract uz/ru models (Apache-2.0)
 brew install tesseract                # or: apt-get install tesseract-ocr
 cd apps/api && uv sync && uv run uvicorn app.main:app --port 8101
 cd apps/web && npm install && npm run dev      # http://localhost:3101  (proxies /api to :8101)
-cd apps/api && uv run pytest -q                # 26 tests
+cd apps/api && uv run pytest -q                # 33 tests
 ```
 Regenerate artifacts: `uv run python -m app.modules.scoring.train --n 30000`, `uv run python -m app.modules.signals.portfolio`, `uv run python ../../eval/run_eval.py --n 81`.
 

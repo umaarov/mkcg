@@ -4,7 +4,7 @@ import re
 from dataclasses import asdict, dataclass, field
 from difflib import SequenceMatcher
 
-AMT_RE = re.compile(r"(?<![\w.,])([+\-\u2212\u2013])?\s?(\d{1,4}(?:[ ,\u00a0\u202f]\d{3})*[.,]\d{2}|\d{5,}[.,]\d{2})(?![\d])")
+AMT_RE = re.compile(r"(?<![\w.,])([+\-\u2212\u2013])?\s?(\d{1,3}(?:\.\d{3})+,\d{2}|\d{1,4}(?:[ ,\u00a0\u202f]\d{3})*[.,]\d{2}|\d{5,}[.,]\d{2})(?![\d])")  # also 1.234.567,89
 DATE_RE = re.compile(r"(?<!\d)(\d{2})[./-](\d{2})[./-](\d{4}|\d{2})(?!\d)|(?<!\d)(\d{4})-(\d{2})-(\d{2})(?!\d)")
 TIN_RE = re.compile(r"(?<!\d)\d{9}(?!\d)")
 

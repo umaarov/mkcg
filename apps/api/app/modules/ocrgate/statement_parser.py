@@ -13,16 +13,19 @@ from .common import (AMT_RE, DATE_RE, FieldOut, TIN_RE, TxOut, best_label, norm_
 from .text import Line, Page
 
 LABELS = {
-    "holder": ["Hisob egasi", "Ҳисоб эгаси", "Владелец счёта", "Владелец счета"],
-    "tin": ["STIR", "СТИР", "ИНН"],
-    "account": ["Hisob raqami", "Ҳисоб рақами", "Номер счёта", "Номер счета"],
-    "period": ["Davr", "Давр", "Период"],
-    "opening": ["Davr boshiga qoldiq", "Давр бошига қолдиқ", "Остаток на начало периода"],
-    "closing": ["Davr oxiriga qoldiq", "Давр охирига қолдиқ", "Остаток на конец периода"],
+    "holder": ["Hisob egasi", "Ҳисоб эгаси", "Владелец счёта", "Владелец счета", "Клиент", "Наименование клиента", "Mijoz", "Mijoz nomi", "Account holder", "Customer"],
+    "tin": ["STIR", "СТИР", "ИНН", "TIN"],
+    "account": ["Hisob raqami", "Ҳисоб рақами", "Номер счёта", "Номер счета", "Расчётный счёт", "Расчетный счет", "Р/с", "Hisobraqam", "Hisob", "Account number", "Account"],
+    "period": ["Davr", "Давр", "Период", "Period", "Statement period"],
+    "opening": ["Davr boshiga qoldiq", "Давр бошига қолдиқ", "Остаток на начало периода", "Входящий остаток", "Остаток на начало", "Boshlang'ich qoldiq", "Kirish qoldig'i", "Opening balance"],
+    "closing": ["Davr oxiriga qoldiq", "Давр охирига қолдиқ", "Остаток на конец периода", "Исходящий остаток", "Остаток на конец", "Yakuniy qoldiq", "Chiqish qoldig'i", "Closing balance"],
 }
 CP_RE = re.compile(r"(?P<name>.+?)\W{0,3}(?:STIR|СТИР|ИНН)\W{0,3}(?P<tin>\d{9})\W*(?P<purpose>.*)$", re.I)
 FOOTER_RE = re.compile(r"^\s*\d{1,3}\s*/\s*\d{1,3}\s*$")
-ROW_START = re.compile(r"^\W{0,2}(\d{2}[./-]\d{2}[./-]\d{4}|\d{2}[./]\d{2}[./]\d{2}(?!\d)|\d{4}-\d{2}-\d{2})")
+_DATE_PAT = r"(\d{2}[./-]\d{2}[./-]\d{4}|\d{2}[./]\d{2}[./]\d{2}(?!\d)|\d{4}-\d{2}-\d{2})"
+# portal exports put a running number and/or a document number before the date
+ROW_START = re.compile(r"^\W{0,2}(?P<pre>(?:\d{1,10}[.)]?\s+){0,2})" + _DATE_PAT)
+TOTAL_RE = re.compile(r"^\W{0,2}(итого|итог\b|всего|jami|жами|total|oborot|обороты|сумма оборотов)", re.I)
 # OCR-tolerant: digits may be read as O/o/l/I/| and separators may be dropped
 FUZZY_DATE = re.compile(r"^\W{0,2}([\dOoОоlI|]{2}[./\-]?[\dOoОоlI|]{2}[./\-]?[\dOoОоlI|]{4}|[\dOoОоlI|]{10}|[\dOoОоlI|]{4}-[\dOoОоlI|]{2}-[\dOoОоlI|]{2})(?=\s)")
 _DIGITMAP = str.maketrans({"O": "0", "o": "0", "О": "0", "о": "0", "l": "1", "I": "1", "|": "1"})
@@ -129,6 +132,11 @@ def _records(pages: list[Page]):
             t = line.text
             if FOOTER_RE.match(t):
                 continue
+            if TOTAL_RE.match(t):  # "Итого обороты" etc.: ends the table, never a transaction
+                if cur:
+                    yield cur_page, cur
+                    cur = None
+                continue
             if is_row_start(line):
                 if cur:
                     yield cur_page, cur
@@ -154,8 +162,12 @@ def parse_transactions(pages: list[Page], opening: float | None, doc: str,
         text = "  ".join(l.text for l in lines)
         m = ROW_START.match(text)
         date, flags0 = None, []
+        pre_doc = ""
         if m:
-            date, rest = parse_date(m.group(1)), text[m.end():]
+            date, rest = parse_date(m.group(2)), text[m.end():]
+            toks = m.group("pre").split()
+            if len(toks) == 2:
+                pre_doc = re.sub(r"\D", "", toks[1])
         else:
             fm = FUZZY_DATE.match(text)
             if fm:
@@ -179,6 +191,7 @@ def parse_transactions(pages: list[Page], opening: float | None, doc: str,
         desc_txt = re.sub(r"\s+", " ", desc_txt).strip()
         dm = re.match(r"^(\d{1,7})\s+(.*)$", desc_txt)
         doc_no, desc = (dm.group(1), dm.group(2)) if dm else ("", desc_txt)
+        doc_no = doc_no or pre_doc
         balance = amts[-1][1]
         cands = [(s, v) for s, v, _ in amts[:-1]]
         bbox = [min(l.x0 for l in lines), min(l.y0 for l in lines), max(l.x1 for l in lines), max(l.y1 for l in lines)]
@@ -190,6 +203,9 @@ def parse_transactions(pages: list[Page], opening: float | None, doc: str,
     stats = dict(rows=0, repaired=0, unparsed=0, chain_breaks=0)  # unparsed = date-led blocks without movement+balance
     prev = opening
     oks = [r for r in raw if r["ok"]]
+    if len(oks) >= 3 and _newest_first([r["date"] for r in oks]):
+        raw.reverse()  # online banking exports list the newest transaction first; the balance chain needs chronological order
+        stats["reversed_order"] = True
     for i, r in enumerate(raw):
         if not r["ok"]:
             stats["unparsed"] += 1
@@ -255,6 +271,13 @@ def parse_transactions(pages: list[Page], opening: float | None, doc: str,
     _fix_dates(txs, None)
     stats["rows"] = len(txs)
     return txs, stats
+
+
+def _newest_first(dates: list[str]) -> bool:
+    """Majority of consecutive pairs strictly descending => the statement is printed newest first."""
+    down = sum(1 for a, b in zip(dates, dates[1:]) if a > b)
+    up = sum(1 for a, b in zip(dates, dates[1:]) if a < b)
+    return down > 2 * up and down >= 2
 
 
 def _amt_match(c: float, target: float) -> bool:

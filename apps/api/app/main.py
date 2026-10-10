@@ -18,6 +18,7 @@ from .db import Case, Document, User, init_db, now, session
 from .modules.fgate import chain
 from .modules.formalbrief import memo as memo_mod
 from .modules.formalbrief.facts import Fact
+from .modules.ocrgate.sheets import SHEET_EXT, sheet_to_pdf
 from .modules.ocrgate.text import page_image_png
 from .modules.router import gateway
 from .modules.scoring import model as scorer
@@ -25,7 +26,7 @@ from .modules.signals import portfolio
 
 app = FastAPI(title="CreditGateway API", version="0.1")
 app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins.split(","), allow_methods=["*"], allow_headers=["*"])
-ALLOWED = {".pdf", ".png", ".jpg", ".jpeg"}
+ALLOWED = {".pdf", ".png", ".jpg", ".jpeg", ".xlsx", ".xlsm", ".csv"}
 MAX_BYTES = 15 * 1024 * 1024
 EVAL_PATH = Path(__file__).resolve().parents[3] / "eval" / "results" / "latest.json"
 
@@ -130,12 +131,14 @@ def list_cases(user: dict = Depends(auth.current_user)):
 
 @app.post("/api/cases")
 async def create_case(files: list[UploadFile] = File(...), amount: float = Form(...), term: int = Form(...), lang: str = Form("uz"),
-                      user: dict = Depends(auth.require_role("officer", "admin"))):
+                      synthetic_ack: bool = Form(False), user: dict = Depends(auth.require_role("officer", "admin"))):
+    if not synthetic_ack:
+        raise HTTPException(400, "confirm that the documents are synthetic or test data without real personal data (synthetic_ack=true)")
     if not (1 <= len(files) <= 6):
         raise HTTPException(400, "upload 1 to 6 files")
     # Read every upload BEFORE touching the database: a write transaction must never stay open across an await,
     # otherwise a second request blocks the event loop on SQLite's write lock while the first cannot resume (deadlock).
-    blobs: list[tuple[str, bytes]] = []
+    blobs: list[tuple[str, str, bytes]] = []  # (name shown to the officer, name on disk, bytes)
     for f in files:
         ext = Path(f.filename or "").suffix.lower()
         if ext not in ALLOWED:
@@ -143,24 +146,40 @@ async def create_case(files: list[UploadFile] = File(...), amount: float = Form(
         data = await f.read()
         if len(data) > MAX_BYTES:
             raise HTTPException(400, "file too large (15 MB max)")
-        blobs.append((Path(f.filename or "doc").name, data))
+        name = Path(f.filename or "doc").name
+        if ext in SHEET_EXT:  # Excel / CSV exports are rendered to a text-layer PDF so one pipeline reads everything
+            try:
+                data = await run_in_threadpool(_sheet_bytes, name, data)
+            except Exception as e:  # noqa: BLE001
+                raise HTTPException(400, f"could not read the spreadsheet {name}: {e}") from e
+            blobs.append((name, name + ".pdf", data))
+        else:
+            blobs.append((name, name, data))
     cid = await run_in_threadpool(_store_case, user, amount, term, lang, blobs)
     return dict(id=cid)
 
 
-def _store_case(user: dict, amount: float, term: int, lang: str, blobs: list[tuple[str, bytes]]) -> str:
+def _sheet_bytes(name: str, data: bytes) -> bytes:
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        src = Path(td) / name
+        src.write_bytes(data)
+        return sheet_to_pdf(src, Path(td) / "out.pdf").read_bytes()
+
+
+def _store_case(user: dict, amount: float, term: int, lang: str, blobs: list[tuple[str, str, bytes]]) -> str:
     with session() as s:
         case = _new_case(user, amount, term, lang)
         s.add(case)
         s.flush()
         cdir = settings.uploads_dir / case.id
         cdir.mkdir(parents=True, exist_ok=True)
-        for name, data in blobs:
-            p = cdir / name
+        for shown, stored, data in blobs:
+            p = cdir / stored
             p.write_bytes(data)
-            s.add(Document(case_id=case.id, filename=name, path=str(p)))
+            s.add(Document(case_id=case.id, filename=shown, path=str(p)))
         cid = case.id
-    chain.append(user["username"], "case_created", cid, dict(files=[n for n, _ in blobs], amount=amount, term=term))
+    chain.append(user["username"], "case_created", cid, dict(files=[b[0] for b in blobs], amount=amount, term=term, synthetic_ack=True))
     pipeline.submit_extraction(cid)
     return cid
 

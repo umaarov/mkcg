@@ -21,6 +21,7 @@ export default function Queue() {
   const [busy, setBusy] = useState<string>("");
   const [err, setErr] = useState("");
   const [files, setFiles] = useState<File[]>([]);
+  const [ack, setAck] = useState(false);
   const [amount, setAmount] = useState("120000000");
   const [term, setTerm] = useState("24");
   const fileRef = useRef<HTMLInputElement>(null);
@@ -45,7 +46,7 @@ export default function Queue() {
     try {
       const fd = new FormData();
       files.forEach((f) => fd.append("files", f));
-      fd.append("amount", amount); fd.append("term", term); fd.append("lang", lang);
+      fd.append("synthetic_ack", String(ack)); fd.append("amount", amount); fd.append("term", term); fd.append("lang", lang);
       const r = await api("/api/cases", { method: "POST", body: fd });
       router.push(`/cases/${r.id}`);
     } catch (e: any) { setErr(e.message); setBusy(""); }
@@ -105,13 +106,14 @@ export default function Queue() {
         <aside className="space-y-4">
           <Card>
             <H sub={t("q.upload.sub")}>{t("q.upload")}</H>
+            <p className="mb-3 rounded-lg bg-warn-soft px-3 py-2 text-[12px] leading-5 text-warn" role="note">{t("q.notice")}</p>
             <div role="button" tabIndex={0} onClick={() => fileRef.current?.click()} onKeyDown={(e) => e.key === "Enter" && fileRef.current?.click()}
               onDragOver={(e) => e.preventDefault()}
               onDrop={(e) => { e.preventDefault(); setFiles([...files, ...Array.from(e.dataTransfer.files)].slice(0, 6)); }}
               className="cursor-pointer rounded-lg border border-dashed border-line-2 bg-surface-2 px-4 py-8 text-center text-[13px] text-muted hover:border-accent">
               {files.length ? <ul className="space-y-0.5 text-ink">{files.map((f) => <li key={f.name} className="truncate">{f.name}</li>)}</ul> : t("q.drop")}
             </div>
-            <input ref={fileRef} type="file" multiple accept=".pdf,.png,.jpg,.jpeg" className="hidden"
+            <input ref={fileRef} type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.xlsx,.xlsm,.csv" className="hidden"
               onChange={(e) => setFiles(Array.from(e.target.files || []).slice(0, 6))} />
             <div className="mt-3 grid grid-cols-2 gap-3">
               <label className="text-[12px] text-muted">{t("q.amount")}
@@ -119,7 +121,11 @@ export default function Queue() {
               <label className="text-[12px] text-muted">{t("q.term")}
                 <input value={term} onChange={(e) => setTerm(e.target.value.replace(/\D/g, ""))} inputMode="numeric" className="tnum mt-1 w-full rounded-lg border border-line-2 bg-surface px-3 py-2 text-[13px] text-ink" /></label>
             </div>
-            <Button className="mt-4 w-full" disabled={!files.length || !!busy || !amount || !term} onClick={upload}>{busy === "upload" ? t("common.loading") : t("q.start")}</Button>
+            <label className="mt-3 flex cursor-pointer items-start gap-2 text-[12px] leading-5 text-ink-2">
+              <input type="checkbox" checked={ack} onChange={(e) => setAck(e.target.checked)} className="mt-1 accent-[var(--accent)]" />
+              <span>{t("q.ack")}</span>
+            </label>
+            <Button className="mt-4 w-full" disabled={!files.length || !!busy || !amount || !term || !ack} onClick={upload}>{busy === "upload" ? t("common.loading") : t("q.start")}</Button>
             {err && <p className="mt-2 text-[12.5px] text-bad" role="alert">{err}</p>}
           </Card>
           <Card>
