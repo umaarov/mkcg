@@ -8,6 +8,7 @@ import subprocess
 from pathlib import Path
 
 from fastapi import Body, Depends, FastAPI, File, Form, HTTPException, Response, UploadFile
+from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm.attributes import flag_modified
 
@@ -132,27 +133,36 @@ async def create_case(files: list[UploadFile] = File(...), amount: float = Form(
                       user: dict = Depends(auth.require_role("officer", "admin"))):
     if not (1 <= len(files) <= 6):
         raise HTTPException(400, "upload 1 to 6 files")
+    # Read every upload BEFORE touching the database: a write transaction must never stay open across an await,
+    # otherwise a second request blocks the event loop on SQLite's write lock while the first cannot resume (deadlock).
+    blobs: list[tuple[str, bytes]] = []
+    for f in files:
+        ext = Path(f.filename or "").suffix.lower()
+        if ext not in ALLOWED:
+            raise HTTPException(400, f"unsupported file type {ext}")
+        data = await f.read()
+        if len(data) > MAX_BYTES:
+            raise HTTPException(400, "file too large (15 MB max)")
+        blobs.append((Path(f.filename or "doc").name, data))
+    cid = await run_in_threadpool(_store_case, user, amount, term, lang, blobs)
+    return dict(id=cid)
+
+
+def _store_case(user: dict, amount: float, term: int, lang: str, blobs: list[tuple[str, bytes]]) -> str:
     with session() as s:
         case = _new_case(user, amount, term, lang)
         s.add(case)
         s.flush()
         cdir = settings.uploads_dir / case.id
         cdir.mkdir(parents=True, exist_ok=True)
-        for f in files:
-            ext = Path(f.filename or "").suffix.lower()
-            if ext not in ALLOWED:
-                raise HTTPException(400, f"unsupported file type {ext}")
-            data = await f.read()
-            if len(data) > MAX_BYTES:
-                raise HTTPException(400, "file too large (15 MB max)")
-            name = Path(f.filename or "doc").name
+        for name, data in blobs:
             p = cdir / name
             p.write_bytes(data)
             s.add(Document(case_id=case.id, filename=name, path=str(p)))
         cid = case.id
-    chain.append(user["username"], "case_created", cid, dict(files=[f.filename for f in files], amount=amount, term=term))
+    chain.append(user["username"], "case_created", cid, dict(files=[n for n, _ in blobs], amount=amount, term=term))
     pipeline.submit_extraction(cid)
-    return dict(id=cid)
+    return cid
 
 
 @app.get("/api/samples")

@@ -1,7 +1,12 @@
 # CreditGateway: API + web (+ optional Caddy for automatic HTTPS).
 #   docker compose up -d --build                 -> web on 127.0.0.1:${WEB_PORT:-3101}
-#   docker compose --profile https up -d --build -> also terminates TLS on :80/:443 for $PUBLIC_HOST
+#   docker compose --profile https  up -d --build -> + Caddy terminating TLS on :80/:443 for $PUBLIC_HOST (needs free 80/443)
+#   docker compose --profile tunnel up -d --build -> + outbound-only Cloudflare quick tunnel: public https URL, no inbound ports
+#   everything lives in this one compose project: `deploy/teardown.sh` removes containers, volumes, images and the directory.
 name: creditgateway
+x-log: &log
+  driver: json-file
+  options: { max-size: "10m", max-file: "3" }
 services:
   api:
     build: { context: ., dockerfile: deploy/Dockerfile.api }
@@ -9,17 +14,32 @@ services:
     environment:
       CG_SECRET_KEY: ${CG_SECRET_KEY:?set CG_SECRET_KEY in .env}
       CG_ANTHROPIC_API_KEY: ${CG_ANTHROPIC_API_KEY:-}
+      CG_OPENAI_BASE_URL: ${CG_OPENAI_BASE_URL:-}
+      CG_OPENAI_API_KEY: ${CG_OPENAI_API_KEY:-}
+      CG_OPENAI_EXTRACTION_MODEL: ${CG_OPENAI_EXTRACTION_MODEL:-deepseek-chat}
+      CG_OPENAI_MEMO_MODEL: ${CG_OPENAI_MEMO_MODEL:-deepseek-chat}
       CG_PERIMETER_MODE: ${CG_PERIMETER_MODE:-false}
       CG_LOCAL_BASE_URL: ${CG_LOCAL_BASE_URL:-}
     volumes: [ "cg_data:/data" ]
     mem_limit: 4g
     cpus: 3
+    cpu_shares: 128   # a shared host: under contention the neighbour's containers (default 1024) win
+    logging: *log
   web:
     build: { context: ., dockerfile: deploy/Dockerfile.web, args: { API_URL: "http://api:8000" } }
     restart: unless-stopped
     depends_on: [ api ]
     ports: [ "127.0.0.1:${WEB_PORT:-3101}:3000" ]
     mem_limit: 512m
+    logging: *log
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    profiles: [ tunnel ]
+    restart: unless-stopped
+    depends_on: [ web ]
+    command: tunnel --no-autoupdate --url http://web:3000
+    mem_limit: 128m
+    logging: *log
   caddy:
     image: caddy:2-alpine
     profiles: [ https ]

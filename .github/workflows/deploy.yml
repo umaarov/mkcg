@@ -17,6 +17,6 @@ jobs:
       - name: sync code
         run: rsync -az --delete --exclude .git --exclude .env --exclude apps/api/var -e "ssh -i ~/.ssh/id_deploy" ./ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/"
       - name: build and restart
-        run: ssh -i ~/.ssh/id_deploy "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" "cd ${{ secrets.DEPLOY_PATH }} && docker compose up -d --build && docker image prune -f"
+        run: ssh -i ~/.ssh/id_deploy "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" "cd ${{ secrets.DEPLOY_PATH }} && docker compose --profile tunnel up -d --build"
       - name: smoke test
-        run: sleep 15 && curl -fsS "https://${{ vars.PUBLIC_HOST }}/api/health"
+        run: sleep 20 && ssh -i ~/.ssh/id_deploy "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" "curl -fsS http://127.0.0.1:3101/api/health"

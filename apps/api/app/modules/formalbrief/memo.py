@@ -115,12 +115,26 @@ def _norm(num: str) -> str:
     return s.replace(",", ".").rstrip("0").rstrip(".") if "." in s else s
 
 
+_ABBR = re.compile(r"(?:мес|сум|млн|млрд|тыс|руб|г|гг|oy|so['’ʻ]m|mln|mlrd|ming|yil|mo|approx|vs|no)\.$", re.I)
+
+
+def _sentences(text: str) -> list[str]:
+    """Split on . ! ? and newlines, but do not break after an abbreviation such as 'мес.' when the next piece continues the sentence."""
+    out: list[str] = []
+    for frag in re.split(r"(?<=[.!?])\s+|\n", text):
+        if out and _ABBR.search(out[-1]) and frag and not frag[0].isupper() and frag[0] not in "•-–":
+            out[-1] += " " + frag
+        else:
+            out.append(frag)
+    return out
+
+
 def verify(text: str, facts: list[Fact]) -> dict:
     allowed = {_norm(n) for f in facts for n in _NUM.findall(f.display)}
     allowed |= {"2026", "1", "2", "3", "12", "24", "36", "48"}
     allowed_ids = {f.id for f in facts}
     violations = []
-    for sent in re.split(r"(?<=[.!?])\s+|\n", text):
+    for sent in _sentences(text):
         cites = re.findall(r"\[(F\d+)\]", sent)
         for c in cites:
             if c not in allowed_ids:

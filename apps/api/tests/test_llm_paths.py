@@ -30,6 +30,7 @@ class Stub:
             def do_POST(self):
                 body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
                 stub.requests.append(body)
+                stub.auth = self.headers.get("Authorization")
                 text = stub.replies.pop(0) if stub.replies else "{}"
                 out = json.dumps({"choices": [{"message": {"content": text}}], "usage": {"prompt_tokens": 10, "completion_tokens": 5}}).encode()
                 self.send_response(200); self.send_header("Content-Type", "application/json"); self.end_headers(); self.wfile.write(out)
@@ -93,3 +94,27 @@ def test_llm_memo_falls_back_when_model_keeps_inventing(stub):
     ctx = dict(rules=dict(recommendation="APPROVE", results=[]), recon=dict(verdict="consistent"))
     stub.replies = ["DSCR 7.77 [F01].", "DSCR 8.88 [F01]."]
     assert memo_mod.llm_memo(ctx, facts, "en", dict(sections=[])) is None
+
+
+def test_openai_compatible_external_provider_is_metered_as_external(monkeypatch):
+    """A hosted OpenAI-compatible API (e.g. DeepSeek) is external: bearer key, masked text only, never counted as local."""
+    s = Stub()
+    monkeypatch.setattr(settings, "local_base_url", "")
+    monkeypatch.setattr(settings, "anthropic_api_key", "")
+    monkeypatch.setattr(settings, "openai_base_url", s.url)
+    monkeypatch.setattr(settings, "openai_api_key", "sk-test")
+    monkeypatch.setattr(settings, "perimeter_mode", False)
+    s.replies = ["hello"]
+    before = gateway.summary()
+    r = gateway.complete("memo", "sys", "user", masked=True)
+    assert (r.text, r.provider, r.model) == ("hello", "openai-compatible", settings.openai_memo_model)
+    assert s.auth == "Bearer sk-test"
+    after = gateway.summary()
+    assert after["external"] == before["external"] + 1 and after["local"] == before["local"]
+    assert gateway.status()["external_available"] and gateway.status()["external_provider"] == "openai-compatible"
+    # perimeter mode blocks it even though a key is configured
+    monkeypatch.setattr(settings, "perimeter_mode", True)
+    assert not gateway.status()["external_available"]
+    with pytest.raises(gateway.RouterError):
+        gateway.complete("memo", "sys", "user", masked=True)
+    s.srv.shutdown()

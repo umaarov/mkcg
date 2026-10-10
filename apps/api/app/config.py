@@ -19,10 +19,16 @@ class Settings(BaseSettings):
     anthropic_api_key: str = ""
     extraction_model: str = "claude-haiku-5-5"
     memo_model: str = "claude-sonnet-5-5"
+    # Any hosted OpenAI-compatible API (DeepSeek, OpenRouter, ...). Treated as EXTERNAL: masked text only, blocked in perimeter mode.
+    openai_base_url: str = ""  # e.g. https://api.deepseek.com/v1
+    openai_api_key: str = ""
+    openai_extraction_model: str = "deepseek-chat"
+    openai_memo_model: str = "deepseek-chat"
     local_base_url: str = ""  # OpenAI-compatible endpoint (vLLM / Ollama) for the on-prem path
     local_model: str = "qwen2.5-7b-instruct"
 
-    # Price table, USD per 1M tokens. Assumption: check provider price page before quoting.
+    # Price table, USD per 1M tokens. Assumption: check the provider's price page before quoting. Models not listed are reported as unpriced (0);
+    # set CG_PRICE_IN_PER_M / CG_PRICE_OUT_PER_M as JSON, e.g. '{"deepseek-chat": 0.0}', to meter another model.
     price_in_per_m: dict[str, float] = {"claude-haiku-5-5": 1.0, "claude-sonnet-5-5": 3.0}
     price_out_per_m: dict[str, float] = {"claude-haiku-5-5": 5.0, "claude-sonnet-5-5": 15.0}
 

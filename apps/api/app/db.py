@@ -10,7 +10,7 @@ from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from .config import settings
 
 Base = declarative_base()
-engine = create_engine(settings.db_url, connect_args={"check_same_thread": False}, future=True)
+engine = create_engine(settings.db_url, connect_args={"check_same_thread": False, "timeout": 30}, future=True)
 
 
 @event.listens_for(engine, "connect")
@@ -18,6 +18,7 @@ def _pragmas(dbapi_conn, _):
     cur = dbapi_conn.cursor()
     cur.execute("PRAGMA journal_mode=WAL")
     cur.execute("PRAGMA synchronous=NORMAL")
+    cur.execute("PRAGMA busy_timeout=30000")  # concurrent cases write while others are being analysed
     cur.close()
 
 

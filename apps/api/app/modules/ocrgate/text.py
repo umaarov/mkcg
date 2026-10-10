@@ -19,6 +19,10 @@ from PIL import Image, ImageOps
 from ...config import settings
 
 os.environ.setdefault("TESSDATA_PREFIX", str(settings.tessdata_dir))
+# Pages are OCR'd in parallel processes; Tesseract's own OpenMP threads on top of that oversubscribe the CPU
+# (measured: a 6-page scan took >10 min instead of ~20 s in a CPU-limited container).
+os.environ.setdefault("OMP_THREAD_LIMIT", "1")
+PAGE_TIMEOUT_S = 120
 OCR_LANGS = "uzb+uzb_cyrl+rus"
 
 
@@ -135,7 +139,10 @@ def _ocr_image(img: Image.Image, idx: int, scale_to_pt: float) -> Page:
     W, H = img.size
     if abs(angle) >= 0.3:
         img = img.rotate(angle, resample=Image.BICUBIC, fillcolor=255)
-    data = pytesseract.image_to_data(preprocess(img), lang=OCR_LANGS, config="--psm 6", output_type=pytesseract.Output.DICT)
+    try:
+        data = pytesseract.image_to_data(preprocess(img), lang=OCR_LANGS, config="--psm 6", output_type=pytesseract.Output.DICT, timeout=PAGE_TIMEOUT_S)
+    except RuntimeError:  # page timed out: return it empty so the case is flagged for the officer instead of hanging
+        data = {k: [] for k in ("text", "conf", "left", "top", "width", "height")}
     words = []
     for i, txt in enumerate(data["text"]):
         txt = txt.strip()

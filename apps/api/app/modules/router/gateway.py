@@ -37,10 +37,22 @@ class LLMResult:
     json: dict | list | None = None
 
 
+def _external_provider() -> str:
+    """Which hosted model is configured: Anthropic, or any OpenAI-compatible API (e.g. DeepSeek). Empty = none."""
+    if settings.anthropic_api_key:
+        return "anthropic"
+    if settings.openai_api_key and settings.openai_base_url:
+        return "openai-compatible"
+    return ""
+
+
 def status() -> dict:
-    return dict(perimeter_mode=settings.perimeter_mode, external_available=bool(settings.anthropic_api_key) and not settings.perimeter_mode,
-                local_available=bool(settings.local_base_url), extraction_model=settings.extraction_model,
-                memo_model=settings.memo_model, local_model=settings.local_model)
+    prov = _external_provider()
+    ext_models = ((settings.openai_extraction_model, settings.openai_memo_model) if prov == "openai-compatible"
+                  else (settings.extraction_model, settings.memo_model))
+    return dict(perimeter_mode=settings.perimeter_mode, external_available=bool(prov) and not settings.perimeter_mode, external_provider=prov,
+                local_available=bool(settings.local_base_url), extraction_model=ext_models[0],
+                memo_model=ext_models[1], local_model=settings.local_model)
 
 
 def available() -> bool:
@@ -67,7 +79,7 @@ def call_log() -> list[dict]:
 
 def summary() -> dict:
     log = call_log()
-    ext = [c for c in log if c["provider"] == "anthropic"]
+    ext = [c for c in log if c["provider"] != "local"]
     loc = [c for c in log if c["provider"] == "local"]
     return dict(calls=len(log), external=len(ext), local=len(loc), cost_usd=round(sum(c["cost_usd"] for c in log), 5),
                 p50_s=_pct([c["seconds"] for c in log], 50), p95_s=_pct([c["seconds"] for c in log], 95),
@@ -86,7 +98,8 @@ def complete(purpose: str, system: str, user: str, *, masked: bool, model: str |
     if not masked:
         raise RouterError("refused: only PII-masked text may be sent to a model")
     use_local = bool(settings.local_base_url) and (prefer in ("auto", "local") or settings.perimeter_mode)
-    use_ext = bool(settings.anthropic_api_key) and not settings.perimeter_mode and prefer in ("auto", "external")
+    ext_provider = _external_provider()
+    use_ext = bool(ext_provider) and not settings.perimeter_mode and prefer in ("auto", "external")
     if prefer == "local":
         use_ext = False
     if prefer == "external":
@@ -94,7 +107,19 @@ def complete(purpose: str, system: str, user: str, *, masked: bool, model: str |
     if settings.perimeter_mode and not settings.local_base_url:
         raise RouterError("perimeter mode is on and no local model is configured")
     t0 = time.time()
-    if use_ext and not (use_local and prefer == "local"):
+    if use_ext and ext_provider == "openai-compatible" and not (use_local and prefer == "local"):
+        model = settings.openai_memo_model if purpose == "memo" else settings.openai_extraction_model
+        r = httpx.post(settings.openai_base_url.rstrip("/") + "/chat/completions", timeout=180,
+                       headers={"Authorization": f"Bearer {settings.openai_api_key}"},
+                       json=dict(model=model, max_tokens=max_tokens, temperature=0,
+                                 messages=[dict(role="system", content=system), dict(role="user", content=user)]))
+        if r.status_code >= 400:
+            raise RouterError(f"external model error {r.status_code}: {r.text[:200]}")
+        d = r.json()
+        text = d["choices"][0]["message"]["content"]
+        tin, tout = d.get("usage", {}).get("prompt_tokens", 0), d.get("usage", {}).get("completion_tokens", 0)
+        provider = "openai-compatible"
+    elif use_ext and not (use_local and prefer == "local"):
         model = model or settings.extraction_model
         r = httpx.post("https://api.anthropic.com/v1/messages", timeout=120,
                        headers={"x-api-key": settings.anthropic_api_key, "anthropic-version": "2023-06-01",
@@ -121,7 +146,7 @@ def complete(purpose: str, system: str, user: str, *, masked: bool, model: str |
     else:
         raise RouterError("no model available")
     secs = time.time() - t0
-    res = LLMResult(text, provider, model, tin, tout, round(secs, 2), _cost(model, tin, tout) if provider == "anthropic" else 0.0)
+    res = LLMResult(text, provider, model, tin, tout, round(secs, 2), _cost(model, tin, tout) if provider != "local" else 0.0)
     if want_json:
         res.json = parse_json(text)
     _log(dict(ts=time.time(), purpose=purpose, provider=provider, model=model, tokens_in=tin, tokens_out=tout,
