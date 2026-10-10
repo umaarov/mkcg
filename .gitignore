@@ -1,0 +1,21 @@
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+# runtime state (database, uploads, keys, generated samples)
+apps/api/var/
+# node
+node_modules/
+.next/
+# env / secrets
+.env
+.env.*
+!.env.example
+# eval working files (regenerated)
+eval/work/
+.DS_Store
+.idea/
+data/tessdata/
+docs/
+scripts/

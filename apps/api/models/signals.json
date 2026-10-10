@@ -1,0 +1,449 @@
+{
+ "n_loans": 4000,
+ "threshold": 40,
+ "fit": {
+  "threshold": 40,
+  "defaults": 332,
+  "caught_before_default": 188,
+  "recall": 0.5662650602409639,
+  "false_alert_rate_on_survivors": 0.0749400479616307,
+  "precision": 0.6006389776357828,
+  "median_lead_months": 3.0,
+  "mean_lead_months": 3.202127659574468
+ },
+ "test": {
+  "threshold": 40,
+  "defaults": 286,
+  "caught_before_default": 163,
+  "recall": 0.5699300699300699,
+  "false_alert_rate_on_survivors": 0.06942823803967328,
+  "precision": 0.5780141843971631,
+  "median_lead_months": 3.0,
+  "mean_lead_months": 3.1779141104294477
+ },
+ "watchlist": [
+  {
+   "id": "L900668",
+   "name": "Dilkash Montaj",
+   "form": "XK",
+   "sector": "construction",
+   "amount": 85000000.0,
+   "score": 87.6,
+   "inflow": [
+    52874828,
+    62357158,
+    32071218,
+    28011506,
+    21658440,
+    19726558,
+    16851299,
+    20188255
+   ],
+   "balance": [
+    29255267,
+    32322455,
+    26269937,
+    18994959,
+    9806944,
+    37201,
+    -10598340,
+    -20229057
+   ],
+   "base_inflow": 63614848,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L902611",
+   "name": "Samarqand Market",
+   "form": "MChJ",
+   "sector": "retail",
+   "amount": 270000000.0,
+   "score": 74.6,
+   "inflow": [
+    64358825,
+    48539758,
+    52707616,
+    64754202,
+    36596931,
+    24599925,
+    43306008,
+    23779028
+   ],
+   "balance": [
+    42305411,
+    34013648,
+    26805032,
+    22727094,
+    11331617,
+    -3181654,
+    -12833569,
+    -27560176
+   ],
+   "base_inflow": 58887042,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L903208",
+   "name": "Quyosh Non",
+   "form": "MChJ",
+   "sector": "food",
+   "amount": 25000000.0,
+   "score": 74.0,
+   "inflow": [
+    39282378,
+    23005749,
+    41962442,
+    26268753,
+    31028157,
+    18471791,
+    14453566,
+    21618677
+   ],
+   "balance": [
+    25882821,
+    20242428,
+    20709747,
+    16120670,
+    13065040,
+    5963838,
+    -2432008,
+    -8519306
+   ],
+   "base_inflow": 33899611,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L900203",
+   "name": "Zafar Tovarlar",
+   "form": "MChJ",
+   "sector": "retail",
+   "amount": 30000000.0,
+   "score": 71.2,
+   "inflow": [
+    83973270,
+    52797544,
+    74553682,
+    54726917,
+    46528446,
+    55794807,
+    37789266,
+    44674722
+   ],
+   "balance": [
+    39561473,
+    29784579,
+    25127545,
+    15804690,
+    4552492,
+    -4519057,
+    -17827841,
+    -29516274
+   ],
+   "base_inflow": 83056247,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L900169",
+   "name": "Buxoro Bunyod",
+   "form": "XK",
+   "sector": "construction",
+   "amount": 220000000.0,
+   "score": 67.8,
+   "inflow": [
+    83938645,
+    116249821,
+    101751277,
+    103854505,
+    90253351,
+    76470311,
+    57691094,
+    61729424
+   ],
+   "balance": [
+    27498506,
+    23483246,
+    15914522,
+    8861280,
+    -1525483,
+    -15290347,
+    -33657830,
+    -51035553
+   ],
+   "base_inflow": 105407817,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L901668",
+   "name": "Farg\u02bbona Market",
+   "form": "XK",
+   "sector": "retail",
+   "amount": 145000000.0,
+   "score": 66.8,
+   "inflow": [
+    28073659,
+    31218624,
+    41884954,
+    45569482,
+    23131770,
+    25417081,
+    24490050,
+    23100488
+   ],
+   "balance": [
+    16471279,
+    11540535,
+    9596655,
+    8684545,
+    1489259,
+    -5066076,
+    -11881006,
+    -19085051
+   ],
+   "base_inflow": 36136111,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L900947",
+   "name": "Botirov Doniyor",
+   "form": "YaTT",
+   "sector": "agro",
+   "amount": 300000000.0,
+   "score": 66.7,
+   "inflow": [
+    131901866,
+    198318822,
+    171229993,
+    113180839,
+    87588386,
+    95904200,
+    86329801,
+    93054968
+   ],
+   "balance": [
+    1895117,
+    26046937,
+    38147407,
+    24422813,
+    -687420,
+    -22098091,
+    -47768246,
+    -70446491
+   ],
+   "base_inflow": 130953410,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L903037",
+   "name": "Umarov Farhod",
+   "form": "YaTT",
+   "sector": "logistics",
+   "amount": 235000000.0,
+   "score": 65.4,
+   "inflow": [
+    60134116,
+    77154136,
+    74390768,
+    61335002,
+    50081705,
+    41150775,
+    32488854,
+    64363350
+   ],
+   "balance": [
+    36329526,
+    38637962,
+    39887550,
+    36134523,
+    28069538,
+    16582463,
+    1776375,
+    -816272
+   ],
+   "base_inflow": 65983570,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L902044",
+   "name": "Amir Meva",
+   "form": "MChJ",
+   "sector": "agro",
+   "amount": 20000000.0,
+   "score": 65.0,
+   "inflow": [
+    20056467,
+    13410654,
+    18578452,
+    11032163,
+    9425683,
+    9259380,
+    7056129,
+    9311942
+   ],
+   "balance": [
+    11105495,
+    10180258,
+    10851540,
+    9191502,
+    7035164,
+    4827449,
+    1939071,
+    -252406
+   ],
+   "base_inflow": 11031610,
+   "eventually_defaulted": false
+  },
+  {
+   "id": "L903038",
+   "name": "Oltin Tovarlar",
+   "form": "MChJ",
+   "sector": "retail",
+   "amount": 145000000.0,
+   "score": 64.9,
+   "inflow": [
+    140018051,
+    123125222,
+    140879221,
+    116972675,
+    116429123,
+    92982358,
+    104479949,
+    115352658
+   ],
+   "balance": [
+    107250632,
+    91590774,
+    81781387,
+    64094082,
+    46227660,
+    20634831,
+    -1169199,
+    -19390348
+   ],
+   "base_inflow": 165168106,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L903948",
+   "name": "Guliston Tekstil",
+   "form": "MChJ",
+   "sector": "textile",
+   "amount": 65000000.0,
+   "score": 64.6,
+   "inflow": [
+    29664571,
+    20937078,
+    23409788,
+    31195669,
+    18810377,
+    46006361,
+    25146398,
+    20590119
+   ],
+   "balance": [
+    35003504,
+    28114551,
+    22023257,
+    18443570,
+    10868575,
+    12066594,
+    6535504,
+    -465373
+   ],
+   "base_inflow": 40633018,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L903533",
+   "name": "Komilov Aziz",
+   "form": "YaTT",
+   "sector": "construction",
+   "amount": 75000000.0,
+   "score": 64.2,
+   "inflow": [
+    42422858,
+    44590128,
+    42522511,
+    38518244,
+    34264507,
+    27042859,
+    27222153,
+    29533029
+   ],
+   "balance": [
+    21155143,
+    20887000,
+    19824382,
+    17223141,
+    12987418,
+    5976805,
+    -964915,
+    -7018690
+   ],
+   "base_inflow": 40617004,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L902457",
+   "name": "Nazarovov Doniyor",
+   "form": "YaTT",
+   "sector": "logistics",
+   "amount": 135000000.0,
+   "score": 62.6,
+   "inflow": [
+    87641705,
+    108968185,
+    58913990,
+    68900935,
+    94866375,
+    80427932,
+    64662570,
+    51965681
+   ],
+   "balance": [
+    55671022,
+    55795772,
+    40270363,
+    27867516,
+    23583134,
+    14784366,
+    1056334,
+    -16641563
+   ],
+   "base_inflow": 86624674,
+   "eventually_defaulted": true
+  },
+  {
+   "id": "L901400",
+   "name": "Ishonch Logistika",
+   "form": "MChJ",
+   "sector": "logistics",
+   "amount": 215000000.0,
+   "score": 61.7,
+   "inflow": [
+    55161059,
+    47681593,
+    44377416,
+    46233435,
+    33954565,
+    44394419,
+    36293561,
+    42907301
+   ],
+   "balance": [
+    36201488,
+    29633031,
+    22063113,
+    15055734,
+    4326762,
+    -3238003,
+    -13258051,
+    -21273545
+   ],
+   "base_inflow": 57225845,
+   "eventually_defaulted": true
+  }
+ ],
+ "as_of_month": 7,
+ "baseline": "missed-payment trigger = alert only at the default month (lead time 0)",
+ "caveat": "Synthetic book. Lead time and recall measure how well the signals recover the simulated process, not real portfolio behaviour."
+}

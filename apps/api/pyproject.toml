@@ -1,0 +1,39 @@
+[project]
+name = "api"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "aiosqlite",
+    "anthropic",
+    "cryptography",
+    "faker",
+    "fastapi",
+    "httpx",
+    "lightgbm",
+    "numpy",
+    "orjson",
+    "pandas",
+    "pdfplumber",
+    "pillow",
+    "pyarrow>=26.0.0",
+    "pydantic",
+    "pydantic-settings",
+    "pymupdf",
+    "pytesseract",
+    "python-multipart",
+    "pyyaml",
+    "reportlab",
+    "scikit-learn",
+    "shap",
+    "sqlalchemy",
+    "uvicorn[standard]",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

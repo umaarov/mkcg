@@ -1,0 +1,127 @@
+{
+ "data": {
+  "kind": "SYNTHETIC (declared in README)",
+  "n_sme": 30000,
+  "n_transactions": 6648597,
+  "default_rate": 0.15686666666666665,
+  "split": {
+   "train": 21000,
+   "valid": 4500,
+   "test": 4500
+  }
+ },
+ "metrics": {
+  "auc_lightgbm": 0.8296931661161198,
+  "ks_lightgbm": 0.5332863423587704,
+  "brier_lightgbm": 0.09714117085723817,
+  "auc_logistic_baseline": 0.8111470963896923,
+  "auc_dscr_only_baseline": 0.6941404771229328
+ },
+ "calibration": [
+  {
+   "pred": 0.026961180582382324,
+   "obs": 0.042222222222222223,
+   "n": 450
+  },
+  {
+   "pred": 0.03386048360628233,
+   "obs": 0.03777777777777778,
+   "n": 450
+  },
+  {
+   "pred": 0.038656720898995474,
+   "obs": 0.051111111111111114,
+   "n": 450
+  },
+  {
+   "pred": 0.046395275998514014,
+   "obs": 0.03333333333333333,
+   "n": 450
+  },
+  {
+   "pred": 0.0596730811719193,
+   "obs": 0.04666666666666667,
+   "n": 450
+  },
+  {
+   "pred": 0.08998706050547572,
+   "obs": 0.07111111111111111,
+   "n": 450
+  },
+  {
+   "pred": 0.14162095002692762,
+   "obs": 0.14666666666666667,
+   "n": 450
+  },
+  {
+   "pred": 0.1949072303577072,
+   "obs": 0.17555555555555555,
+   "n": 450
+  },
+  {
+   "pred": 0.3265983840953864,
+   "obs": 0.36,
+   "n": 450
+  },
+  {
+   "pred": 0.6275853028986969,
+   "obs": 0.66,
+   "n": 450
+  }
+ ],
+ "band_cutoffs": [
+  0.046381025914412795,
+  0.14219479451062206,
+  0.32266993612113243,
+  0.6109702836540776
+ ],
+ "bands": [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E"
+ ],
+ "feature_importance": {
+  "low_balance_days_share": 19567.321938291192,
+  "dscr": 9416.24071264267,
+  "existing_ds_ratio": 9092.994406044483,
+  "log_avg_inflow": 7807.675434589386,
+  "roundtrip_share": 4571.030342787504,
+  "op_margin": 1663.1837084889412,
+  "trend_ratio": 1489.130656644702,
+  "cash_deposit_share": 741.0146225206554,
+  "gap_dev": 175.32212036848068,
+  "inflow_cv": 119.86426790058613,
+  "business_age_months": 116.49135037511587,
+  "top1_share": 101.34358930587769,
+  "hhi": 71.88503438420594,
+  "owner_transfer_ratio": 35.11531972885132,
+  "non_operating_in_share": 4.204080104827881,
+  "cashout_ratio": 2.7474400997161865,
+  "loan_to_annual_inflow": 0.0,
+  "active_months": 0.0
+ },
+ "monotone": {
+  "dscr": -1,
+  "loan_to_annual_inflow": 1,
+  "inflow_cv": 1,
+  "trend_ratio": -1,
+  "top1_share": 1,
+  "hhi": 1,
+  "gap_dev": 1,
+  "roundtrip_share": 1,
+  "cashout_ratio": 1,
+  "owner_transfer_ratio": 1,
+  "non_operating_in_share": 1,
+  "low_balance_days_share": 1,
+  "op_margin": -1,
+  "existing_ds_ratio": 1,
+  "cash_deposit_share": 0,
+  "active_months": -1,
+  "business_age_months": -1,
+  "log_avg_inflow": -1
+ },
+ "best_iteration": 122,
+ "caveat": "Labels come from a simulated default process whose drivers are partly unobservable. AUC measures how well the pipeline recovers that process; it is NOT a claim about real Uzbek SME default prediction."
+}

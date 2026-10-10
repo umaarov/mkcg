@@ -1,0 +1,160 @@
+# CreditGateway policy pack for a small-business microloan.
+#
+# IMPORTANT: every threshold below is an ASSUMPTION made by the CreditGateway team, not MKBANK policy.
+# MKBANK's real credit policy is not public. The point of this file is that policy lives as data:
+# a credit-risk officer edits the YAML (or a future UI), the engine re-evaluates, and every
+# decision cites the rule id and evidence. Replace the numbers with the bank's own at pilot start.
+version: "0.1-assumptions"
+as_of: "2026-10-10"
+pricing:
+  annual_rate: 0.24            # assumed all-in annual rate used for the affordability calculation
+  max_payment_share: 0.5       # share of monthly operating cash flow that may go to debt service
+limits:
+  amount_min: 5000000
+  amount_max: 300000000        # upper bound named in the task brief for the Imkoniyat-type product
+  term_min: 6
+  term_max: 48
+  min_business_age_months: 6
+  max_statement_age_days: 60
+
+# kind=min: value >= refer -> PASS, fail <= value < refer -> REFER, value < fail -> FAIL
+# kind=max: value <= refer -> PASS, refer < value <= fail -> REFER, value > fail -> FAIL
+rules:
+  - id: R01
+    metric: request_amount
+    kind: range
+    lo: 5000000
+    hi: 300000000
+    hard: true
+    label: {en: "Requested amount within product limits", uz: "So'ralgan summa mahsulot chegarasida", ru: "Запрашиваемая сумма в пределах лимитов продукта"}
+  - id: R02
+    metric: request_term
+    kind: range
+    lo: 6
+    hi: 48
+    hard: true
+    label: {en: "Requested term within product limits", uz: "So'ralgan muddat mahsulot chegarasida", ru: "Запрашиваемый срок в пределах лимитов продукта"}
+  - id: R03
+    metric: business_age_months
+    kind: min
+    refer: 12
+    fail: 6
+    hard: true
+    label: {en: "Business registered long enough", uz: "Biznes yetarli muddat ro'yxatdan o'tgan", ru: "Бизнес зарегистрирован достаточно давно"}
+  - id: R04
+    metric: active_months
+    kind: min
+    refer: 6
+    fail: 4
+    hard: true
+    label: {en: "Statement shows activity in enough months", uz: "Ko'chirmada faoliyat yetarli oylarda ko'rinadi", ru: "Выписка показывает активность в достаточном числе месяцев"}
+  - id: R05
+    metric: dscr
+    kind: min
+    refer: 1.30
+    fail: 1.10
+    hard: true
+    label: {en: "Debt service coverage (cash flow / instalments)", uz: "Qarz xizmati qoplanishi (pul oqimi / to'lovlar)", ru: "Покрытие долга (денежный поток / платежи)"}
+  - id: R06
+    metric: loan_to_annual_inflow
+    kind: max
+    refer: 0.50
+    fail: 1.00
+    hard: false
+    label: {en: "Loan size relative to annual inflow", uz: "Kredit hajmi yillik tushumga nisbatan", ru: "Размер кредита к годовым поступлениям"}
+  - id: R07
+    metric: top1_share
+    kind: max
+    refer: 0.45
+    fail: 0.70
+    hard: false
+    label: {en: "Largest customer share of sales receipts", uz: "Eng yirik mijozning tushumdagi ulushi", ru: "Доля крупнейшего клиента в поступлениях"}
+  - id: R08
+    metric: gap_adj
+    kind: max
+    refer: 1.25
+    fail: 1.60
+    hard: false
+    label: {en: "Declared revenue not above bank inflows", uz: "Deklaratsiya tushumi bank tushumidan oshmaydi", ru: "Заявленная выручка не превышает поступления на счёт"}
+  - id: R09
+    metric: gap_adj
+    kind: min
+    refer: 0.75
+    fail: 0.50
+    hard: false
+    label: {en: "Declared revenue not far below bank inflows", uz: "Deklaratsiya tushumi bank tushumidan ancha past emas", ru: "Заявленная выручка не намного ниже поступлений на счёт"}
+  - id: R10
+    metric: roundtrip_share
+    kind: max
+    refer: 0.05
+    fail: 0.15
+    hard: true
+    label: {en: "Circular (refunded) inflows", uz: "Aylanma (qaytarilgan) tushumlar", ru: "Круговые (возвращённые) поступления"}
+  - id: R11
+    metric: inflow_cv
+    kind: max
+    refer: 0.35
+    fail: 0.70
+    hard: false
+    label: {en: "Monthly inflow volatility", uz: "Oylik tushum o'zgaruvchanligi", ru: "Волатильность месячных поступлений"}
+  - id: R12
+    metric: trend_ratio
+    kind: min
+    refer: 0.85
+    fail: 0.60
+    hard: false
+    label: {en: "Inflow trend (second half vs first half)", uz: "Tushum dinamikasi (ikkinchi yarim / birinchi yarim)", ru: "Динамика поступлений (вторая половина к первой)"}
+  - id: R13
+    metric: low_balance_days_share
+    kind: max
+    refer: 0.25
+    fail: 0.50
+    hard: false
+    label: {en: "Days with a very low account balance", uz: "Hisobda qoldiq juda past bo'lgan kunlar", ru: "Дни с очень низким остатком на счёте"}
+  - id: R14
+    metric: cashout_ratio
+    kind: max
+    refer: 0.20
+    fail: 0.40
+    hard: false
+    label: {en: "Cash withdrawals share of outflows", uz: "Naqd yechishning chiqimlardagi ulushi", ru: "Доля снятия наличных в расходах"}
+  - id: R15
+    metric: non_operating_in_share
+    kind: max
+    refer: 0.10
+    fail: 0.25
+    hard: false
+    label: {en: "Inflows from owner loans / other lenders", uz: "Ta'sischi qarzi / boshqa kreditorlardan tushumlar", ru: "Поступления от займов учредителя / других кредиторов"}
+  - id: R16
+    metric: identity_gap_share
+    kind: max
+    refer: 0.001
+    fail: 0.02
+    hard: true
+    label: {en: "Statement arithmetic is consistent (opening + credits - debits = closing)", uz: "Ko'chirma arifmetikasi mos (boshlang'ich + kredit - debet = yakuniy)", ru: "Арифметика выписки согласована (начало + кредит - дебет = конец)"}
+  - id: R17
+    metric: identity_consistent
+    kind: bool
+    hard: true
+    label: {en: "Same taxpayer ID across all documents", uz: "Barcha hujjatlarda STIR bir xil", ru: "Один и тот же ИНН во всех документах"}
+  - id: R18
+    metric: statement_age_days
+    kind: max
+    refer: 60
+    fail: 120
+    hard: false
+    label: {en: "Statement is recent", uz: "Ko'chirma yangi", ru: "Выписка актуальна"}
+  - id: R19
+    metric: fields_verified_share
+    kind: min
+    refer: 1.0
+    fail: 0.0
+    hard: false
+    label: {en: "Officer verified low-confidence fields", uz: "Xodim past ishonchli maydonlarni tasdiqladi", ru: "Сотрудник проверил поля с низкой уверенностью"}
+  - id: R20
+    metric: extraction_quality_issues
+    kind: max
+    refer: 0.02
+    fail: 0.10
+    hard: false
+    label: {en: "Document extraction quality (rows repaired or unreadable)", uz: "Hujjatni o'qish sifati (tuzatilgan yoki o'qilmagan qatorlar)", ru: "Качество извлечения (исправленные или нечитаемые строки)"}

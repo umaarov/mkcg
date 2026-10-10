@@ -1,0 +1,33 @@
+# CreditGateway: API + web (+ optional Caddy for automatic HTTPS).
+#   docker compose up -d --build                 -> web on 127.0.0.1:${WEB_PORT:-3101}
+#   docker compose --profile https up -d --build -> also terminates TLS on :80/:443 for $PUBLIC_HOST
+name: creditgateway
+services:
+  api:
+    build: { context: ., dockerfile: deploy/Dockerfile.api }
+    restart: unless-stopped
+    environment:
+      CG_SECRET_KEY: ${CG_SECRET_KEY:?set CG_SECRET_KEY in .env}
+      CG_ANTHROPIC_API_KEY: ${CG_ANTHROPIC_API_KEY:-}
+      CG_PERIMETER_MODE: ${CG_PERIMETER_MODE:-false}
+      CG_LOCAL_BASE_URL: ${CG_LOCAL_BASE_URL:-}
+    volumes: [ "cg_data:/data" ]
+    mem_limit: 4g
+    cpus: 3
+  web:
+    build: { context: ., dockerfile: deploy/Dockerfile.web, args: { API_URL: "http://api:8000" } }
+    restart: unless-stopped
+    depends_on: [ api ]
+    ports: [ "127.0.0.1:${WEB_PORT:-3101}:3000" ]
+    mem_limit: 512m
+  caddy:
+    image: caddy:2-alpine
+    profiles: [ https ]
+    restart: unless-stopped
+    depends_on: [ web ]
+    ports: [ "80:80", "443:443" ]
+    environment: { PUBLIC_HOST: "${PUBLIC_HOST:-localhost}" }
+    volumes: [ "./deploy/Caddyfile:/etc/caddy/Caddyfile:ro", "caddy_data:/data" ]
+volumes:
+  cg_data:
+  caddy_data:

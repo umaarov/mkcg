@@ -1,0 +1,5672 @@
+[
+ {
+  "cfg": {
+   "seed": 700000,
+   "degrade": null,
+   "lang": "uz",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.06,
+    "route": "text_layer",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 216,
+    "rows_parsed": 216,
+    "rows_matched": 216,
+    "cat_ok": 216,
+    "date_exact": 216,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 5,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700001,
+   "degrade": "scan",
+   "lang": "uz",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 18.5,
+    "route": "ocr",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 204,
+    "rows_parsed": 204,
+    "rows_matched": 198,
+    "cat_ok": 173,
+    "date_exact": 136,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": false,
+    "flagged": true,
+    "rows_recall_case": 0.9705882352941176,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.8511882658744894,
+     "top1_share": 0.205090402630296
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.58,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.55,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700002,
+   "degrade": "photo",
+   "lang": "uz",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 21.11,
+    "route": "ocr",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 225,
+    "rows_parsed": 181,
+    "rows_matched": 112,
+    "cat_ok": 72,
+    "date_exact": 45,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": false
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.49777777777777776,
+    "metric_err": {
+     "op_inflow_avg": 0.21568776747761437,
+     "net_cf_avg": 0.5671931635915638,
+     "top1_share": 0.07568793042388806
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.8,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": false,
+     "tax_rate": false,
+     "employees": false
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.73,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700003,
+   "degrade": null,
+   "lang": "uzc",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.09,
+    "route": "text_layer",
+    "pages": 8,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 293,
+    "rows_parsed": 293,
+    "rows_matched": 293,
+    "cat_ok": 293,
+    "date_exact": 293,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700004,
+   "degrade": "scan",
+   "lang": "uzc",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 11.74,
+    "route": "ocr",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 147,
+    "rows_parsed": 139,
+    "rows_matched": 117,
+    "cat_ok": 75,
+    "date_exact": 55,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.7959183673469388,
+    "metric_err": {
+     "op_inflow_avg": 0.10868607785120074,
+     "net_cf_avg": 2.1109436538436506,
+     "top1_share": 0.056032450817278076
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 2.18,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.62,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700005,
+   "degrade": "photo",
+   "lang": "uzc",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 11.67,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 173,
+    "rows_parsed": 124,
+    "rows_matched": 55,
+    "cat_ok": 23,
+    "date_exact": 10,
+    "hdr": {
+     "tin": true,
+     "account": false,
+     "opening": false,
+     "closing": false,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.3179190751445087,
+    "metric_err": {
+     "op_inflow_avg": 1.2354386702431925,
+     "net_cf_avg": 19.986854906046283,
+     "top1_share": 0.31115561547647935
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.59,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": false
+    },
+    "tin": false
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.53,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 1,
+    "pii_total": 4,
+    "f": {
+     "tin": false,
+     "pinfl": false,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700006,
+   "degrade": null,
+   "lang": "ru",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.16,
+    "route": "text_layer",
+    "pages": 14,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 533,
+    "rows_parsed": 533,
+    "rows_matched": 533,
+    "cat_ok": 533,
+    "date_exact": 533,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700007,
+   "degrade": "scan",
+   "lang": "ru",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 6.63,
+    "route": "ocr",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 144,
+    "rows_parsed": 144,
+    "rows_matched": 144,
+    "cat_ok": 131,
+    "date_exact": 133,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.4182559515980533,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.4,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.32,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700008,
+   "degrade": "photo",
+   "lang": "ru",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 25.1,
+    "route": "ocr",
+    "pages": 9,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 333,
+    "rows_parsed": 290,
+    "rows_matched": 184,
+    "cat_ok": 139,
+    "date_exact": 120,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": false,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": false,
+    "flagged": true,
+    "rows_recall_case": 0.5525525525525525,
+    "metric_err": {
+     "op_inflow_avg": 0.02523797648323825,
+     "net_cf_avg": 1.2745951310547574,
+     "top1_share": 0.4685107421137781
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.5,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": false,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.53,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700009,
+   "degrade": null,
+   "lang": "uz",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.04,
+    "route": "text_layer",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 134,
+    "rows_parsed": 134,
+    "rows_matched": 134,
+    "cat_ok": 134,
+    "date_exact": 134,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 5,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700010,
+   "degrade": "scan",
+   "lang": "uz",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 15.19,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "rows_truth": 173,
+    "rows_parsed": 173,
+    "rows_matched": 171,
+    "cat_ok": 139,
+    "date_exact": 120,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9884393063583815,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 1.3631444659510823,
+     "top1_share": 0.06246447303278798
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.82,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": true,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.56,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700011,
+   "degrade": "photo",
+   "lang": "uz",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 16.08,
+    "route": "ocr",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 154,
+    "rows_parsed": 74,
+    "rows_matched": 30,
+    "cat_ok": 8,
+    "date_exact": 5,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": false,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.19480519480519481,
+    "metric_err": {
+     "op_inflow_avg": 2.81518395205439,
+     "net_cf_avg": 7.0027586792292675,
+     "top1_share": 0.2828925631590412
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.63,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": false
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.74,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 2,
+    "pii_total": 4,
+    "f": {
+     "tin": false,
+     "pinfl": false,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700012,
+   "degrade": null,
+   "lang": "uzc",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.04,
+    "route": "text_layer",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 132,
+    "rows_parsed": 132,
+    "rows_matched": 132,
+    "cat_ok": 132,
+    "date_exact": 132,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700013,
+   "degrade": "scan",
+   "lang": "uzc",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 30.38,
+    "route": "ocr",
+    "pages": 10,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 378,
+    "rows_parsed": 378,
+    "rows_matched": 355,
+    "cat_ok": 318,
+    "date_exact": 267,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9391534391534392,
+    "metric_err": {
+     "op_inflow_avg": 1.9535403360624115,
+     "net_cf_avg": 0.03502733305578053,
+     "top1_share": 0.7647751144469485
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.64,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.45,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700014,
+   "degrade": "photo",
+   "lang": "uzc",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 22.14,
+    "route": "ocr",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 219,
+    "rows_parsed": 154,
+    "rows_matched": 65,
+    "cat_ok": 35,
+    "date_exact": 24,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": false,
+     "closing": true,
+     "period_start": false,
+     "period_end": false
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.2968036529680365,
+    "metric_err": {
+     "op_inflow_avg": 2.8707572356576265,
+     "net_cf_avg": 1.680178171340371,
+     "top1_share": 0.21413800687761186
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.65,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": false,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.58,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700015,
+   "degrade": null,
+   "lang": "ru",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.04,
+    "route": "text_layer",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 143,
+    "rows_parsed": 143,
+    "rows_matched": 143,
+    "cat_ok": 143,
+    "date_exact": 143,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700016,
+   "degrade": "scan",
+   "lang": "ru",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 21.64,
+    "route": "ocr",
+    "pages": 8,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 284,
+    "rows_parsed": 284,
+    "rows_matched": 273,
+    "cat_ok": 253,
+    "date_exact": 233,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9612676056338029,
+    "metric_err": {
+     "op_inflow_avg": 1.230519211717264,
+     "net_cf_avg": 1.0510779496291998,
+     "top1_share": 0.11860468537096089
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.64,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.38,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700017,
+   "degrade": "photo",
+   "lang": "ru",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 9.34,
+    "route": "ocr",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 158,
+    "rows_parsed": 102,
+    "rows_matched": 44,
+    "cat_ok": 25,
+    "date_exact": 20,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": false,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.27848101265822783,
+    "metric_err": {
+     "op_inflow_avg": 0.8797348324509933,
+     "net_cf_avg": 6.144364881290156,
+     "top1_share": 0.1492505272928532
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.74,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": true,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.62,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700018,
+   "degrade": null,
+   "lang": "uz",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.05,
+    "route": "text_layer",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 161,
+    "rows_parsed": 161,
+    "rows_matched": 161,
+    "cat_ok": 161,
+    "date_exact": 161,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 5,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700019,
+   "degrade": "scan",
+   "lang": "uz",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 18.74,
+    "route": "ocr",
+    "pages": 8,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "rows_truth": 234,
+    "rows_parsed": 233,
+    "rows_matched": 200,
+    "cat_ok": 196,
+    "date_exact": 188,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.8547008547008547,
+    "metric_err": {
+     "op_inflow_avg": 1.0148546716446273e-10,
+     "net_cf_avg": 0.20620866034341165,
+     "top1_share": 0.18030846011319424
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.63,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.79,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700020,
+   "degrade": "photo",
+   "lang": "uz",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 18.73,
+    "route": "ocr",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 186,
+    "rows_parsed": 157,
+    "rows_matched": 38,
+    "cat_ok": 33,
+    "date_exact": 14,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": false,
+    "flagged": true,
+    "rows_recall_case": 0.20430107526881722,
+    "metric_err": {
+     "op_inflow_avg": 3.61085010198051,
+     "net_cf_avg": 10.14182067768936,
+     "top1_share": 0.37909791876167276
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.67,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 2.16,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700021,
+   "degrade": null,
+   "lang": "uzc",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.05,
+    "route": "text_layer",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 153,
+    "rows_parsed": 153,
+    "rows_matched": 153,
+    "cat_ok": 153,
+    "date_exact": 153,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700022,
+   "degrade": "scan",
+   "lang": "uzc",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 26.48,
+    "route": "ocr",
+    "pages": 11,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 314,
+    "rows_parsed": 311,
+    "rows_matched": 304,
+    "cat_ok": 290,
+    "date_exact": 272,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9681528662420382,
+    "metric_err": {
+     "op_inflow_avg": 0.1337379230897419,
+     "net_cf_avg": 0.020404671821023193,
+     "top1_share": 2.051276460440991
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.44,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.39,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700023,
+   "degrade": "photo",
+   "lang": "uzc",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 12.1,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 128,
+    "rows_parsed": 117,
+    "rows_matched": 28,
+    "cat_ok": 27,
+    "date_exact": 14,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": false,
+     "closing": false,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.21875,
+    "metric_err": {
+     "op_inflow_avg": 0.7191725930050966,
+     "net_cf_avg": 6.101046895112465,
+     "top1_share": 0.466435551577863
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.71,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.59,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 1,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700024,
+   "degrade": null,
+   "lang": "ru",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.04,
+    "route": "text_layer",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 149,
+    "rows_parsed": 149,
+    "rows_matched": 149,
+    "cat_ok": 149,
+    "date_exact": 149,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700025,
+   "degrade": "scan",
+   "lang": "ru",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 11.42,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 155,
+    "rows_parsed": 151,
+    "rows_matched": 147,
+    "cat_ok": 137,
+    "date_exact": 130,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9483870967741935,
+    "metric_err": {
+     "op_inflow_avg": 0.0031712925136567318,
+     "net_cf_avg": 0.16173823175639504,
+     "top1_share": 0.29045806831607385
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.66,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.44,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700026,
+   "degrade": "photo",
+   "lang": "ru",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 12.87,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 147,
+    "rows_parsed": 117,
+    "rows_matched": 45,
+    "cat_ok": 38,
+    "date_exact": 8,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.30612244897959184,
+    "metric_err": {
+     "op_inflow_avg": 1.30279928564312,
+     "net_cf_avg": 2.375516588300789,
+     "top1_share": 0.27288646118622534
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.91,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": false
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.93,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": false,
+     "pinfl": true,
+     "reg_date": false
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700027,
+   "degrade": null,
+   "lang": "uz",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.05,
+    "route": "text_layer",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 178,
+    "rows_parsed": 178,
+    "rows_matched": 178,
+    "cat_ok": 178,
+    "date_exact": 178,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 5,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700028,
+   "degrade": "scan",
+   "lang": "uz",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 26.65,
+    "route": "ocr",
+    "pages": 10,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 372,
+    "rows_parsed": 367,
+    "rows_matched": 354,
+    "cat_ok": 320,
+    "date_exact": 257,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9516129032258065,
+    "metric_err": {
+     "op_inflow_avg": 0.00539093111893998,
+     "net_cf_avg": 0.33558299569681893,
+     "top1_share": 0.37263528633441334
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.75,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 2.14,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700029,
+   "degrade": "photo",
+   "lang": "uz",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 20.1,
+    "route": "ocr",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "rows_truth": 208,
+    "rows_parsed": 149,
+    "rows_matched": 50,
+    "cat_ok": 29,
+    "date_exact": 8,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.2403846153846154,
+    "metric_err": {
+     "op_inflow_avg": 1.6168006381164401,
+     "net_cf_avg": 0.5728649724079501,
+     "top1_share": 0.2724328942979822
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.64,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": false,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.7,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": false,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700030,
+   "degrade": null,
+   "lang": "uzc",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.06,
+    "route": "text_layer",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 168,
+    "rows_parsed": 168,
+    "rows_matched": 168,
+    "cat_ok": 168,
+    "date_exact": 168,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700031,
+   "degrade": "scan",
+   "lang": "uzc",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 31.5,
+    "route": "ocr",
+    "pages": 12,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 478,
+    "rows_parsed": 478,
+    "rows_matched": 450,
+    "cat_ok": 430,
+    "date_exact": 384,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9414225941422594,
+    "metric_err": {
+     "op_inflow_avg": 0.01472799911170815,
+     "net_cf_avg": 0.549037155260024,
+     "top1_share": 0.06744110760003821
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.47,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.33,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700032,
+   "degrade": "photo",
+   "lang": "uzc",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 16.74,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 179,
+    "rows_parsed": 147,
+    "rows_matched": 83,
+    "cat_ok": 32,
+    "date_exact": 45,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.46368715083798884,
+    "metric_err": {
+     "op_inflow_avg": 3.9682933641027187,
+     "net_cf_avg": 8.52864679826066,
+     "top1_share": 0.2528603504250598
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.59,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": false
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.54,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700033,
+   "degrade": null,
+   "lang": "ru",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.11,
+    "route": "text_layer",
+    "pages": 7,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 270,
+    "rows_parsed": 270,
+    "rows_matched": 270,
+    "cat_ok": 270,
+    "date_exact": 270,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.02,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700034,
+   "degrade": "scan",
+   "lang": "ru",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 11.71,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 187,
+    "rows_parsed": 185,
+    "rows_matched": 175,
+    "cat_ok": 159,
+    "date_exact": 162,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9358288770053476,
+    "metric_err": {
+     "op_inflow_avg": 0.03804261048561454,
+     "net_cf_avg": 0.07879959650302619,
+     "top1_share": 0.1189700639618251
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.48,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.36,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700035,
+   "degrade": "photo",
+   "lang": "ru",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 12.36,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 180,
+    "rows_parsed": 150,
+    "rows_matched": 95,
+    "cat_ok": 56,
+    "date_exact": 21,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": false,
+     "closing": false,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.5277777777777778,
+    "metric_err": {
+     "op_inflow_avg": 0.04088091376904594,
+     "net_cf_avg": 1.3394539686251778,
+     "top1_share": 0.010376614087786304
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 2.15,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": false
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.89,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 1,
+    "pii_total": 4,
+    "f": {
+     "tin": false,
+     "pinfl": false,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700036,
+   "degrade": null,
+   "lang": "uz",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.04,
+    "route": "text_layer",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 142,
+    "rows_parsed": 142,
+    "rows_matched": 142,
+    "cat_ok": 142,
+    "date_exact": 142,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 5,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700037,
+   "degrade": "scan",
+   "lang": "uz",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 19.32,
+    "route": "ocr",
+    "pages": 7,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "rows_truth": 267,
+    "rows_parsed": 267,
+    "rows_matched": 267,
+    "cat_ok": 243,
+    "date_exact": 255,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.045842683592281906,
+     "net_cf_avg": 1.7014123051360992,
+     "top1_share": 0.002249449638020356
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.57,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.49,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700038,
+   "degrade": "photo",
+   "lang": "uz",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 29.44,
+    "route": "ocr",
+    "pages": 9,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "rows_truth": 338,
+    "rows_parsed": 197,
+    "rows_matched": 70,
+    "cat_ok": 47,
+    "date_exact": 27,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": false,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.20710059171597633,
+    "metric_err": {
+     "op_inflow_avg": 4.979845380479665,
+     "net_cf_avg": 1.2056976626723783,
+     "top1_share": 0.2764694107630262
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 2.06,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": true,
+     "tax_amount": false,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 2.13,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700039,
+   "degrade": null,
+   "lang": "uzc",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.07,
+    "route": "text_layer",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 180,
+    "rows_parsed": 180,
+    "rows_matched": 180,
+    "cat_ok": 180,
+    "date_exact": 180,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700040,
+   "degrade": "scan",
+   "lang": "uzc",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 30.16,
+    "route": "ocr",
+    "pages": 10,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 395,
+    "rows_parsed": 394,
+    "rows_matched": 373,
+    "cat_ok": 336,
+    "date_exact": 285,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9443037974683545,
+    "metric_err": {
+     "op_inflow_avg": 0.5310658330014036,
+     "net_cf_avg": 2.047156864999961,
+     "top1_share": 0.06393749882741644
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.57,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.34,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700041,
+   "degrade": "photo",
+   "lang": "uzc",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 17.81,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 185,
+    "rows_parsed": 128,
+    "rows_matched": 63,
+    "cat_ok": 40,
+    "date_exact": 15,
+    "hdr": {
+     "tin": true,
+     "account": false,
+     "opening": false,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.34054054054054056,
+    "metric_err": {
+     "op_inflow_avg": 0.7937791882014988,
+     "net_cf_avg": 0.9657764899365651,
+     "top1_share": 0.20509998402075907
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.76,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": true,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.86,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700042,
+   "degrade": null,
+   "lang": "ru",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.06,
+    "route": "text_layer",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 209,
+    "rows_parsed": 209,
+    "rows_matched": 209,
+    "cat_ok": 209,
+    "date_exact": 209,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700043,
+   "degrade": "scan",
+   "lang": "ru",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 10.0,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 166,
+    "rows_parsed": 165,
+    "rows_matched": 153,
+    "cat_ok": 107,
+    "date_exact": 113,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9216867469879518,
+    "metric_err": {
+     "op_inflow_avg": 0.6736923346688063,
+     "net_cf_avg": 0.479705753496299,
+     "top1_share": 0.005737697706477865
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.66,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.45,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700044,
+   "degrade": "photo",
+   "lang": "ru",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 11.77,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 162,
+    "rows_parsed": 83,
+    "rows_matched": 43,
+    "cat_ok": 18,
+    "date_exact": 22,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": false,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.2654320987654321,
+    "metric_err": {
+     "op_inflow_avg": 0.5651990265052339,
+     "net_cf_avg": 3.4095232182065502,
+     "top1_share": 0.8951751331488794
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 2.05,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": false,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.98,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 1,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700045,
+   "degrade": null,
+   "lang": "uz",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.16,
+    "route": "text_layer",
+    "pages": 17,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 513,
+    "rows_parsed": 513,
+    "rows_matched": 513,
+    "cat_ok": 513,
+    "date_exact": 513,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 5,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700046,
+   "degrade": "scan",
+   "lang": "uz",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 17.34,
+    "route": "ocr",
+    "pages": 7,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 196,
+    "rows_parsed": 195,
+    "rows_matched": 191,
+    "cat_ok": 191,
+    "date_exact": 177,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9744897959183674,
+    "metric_err": {
+     "op_inflow_avg": 0.0026888159980779994,
+     "net_cf_avg": 0.0,
+     "top1_share": 8.410804044704347e-11
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 2.3,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.67,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700047,
+   "degrade": "photo",
+   "lang": "uz",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 23.11,
+    "route": "ocr",
+    "pages": 9,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "rows_truth": 255,
+    "rows_parsed": 220,
+    "rows_matched": 70,
+    "cat_ok": 47,
+    "date_exact": 11,
+    "hdr": {
+     "tin": true,
+     "account": false,
+     "opening": true,
+     "closing": false,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.27450980392156865,
+    "metric_err": {
+     "op_inflow_avg": 2.090120758869679,
+     "net_cf_avg": 10.892905485973936,
+     "top1_share": 0.38714524936542727
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.91,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": false
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.92,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": false,
+     "pinfl": false,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700048,
+   "degrade": null,
+   "lang": "uzc",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.15,
+    "route": "text_layer",
+    "pages": 10,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 286,
+    "rows_parsed": 286,
+    "rows_matched": 286,
+    "cat_ok": 286,
+    "date_exact": 286,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700049,
+   "degrade": "scan",
+   "lang": "uzc",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 15.45,
+    "route": "ocr",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 184,
+    "rows_parsed": 184,
+    "rows_matched": 177,
+    "cat_ok": 146,
+    "date_exact": 125,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9619565217391305,
+    "metric_err": {
+     "op_inflow_avg": 2.2970234941078877e-09,
+     "net_cf_avg": 0.6997669614956834,
+     "top1_share": 0.06219386681529021
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.73,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.41,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700050,
+   "degrade": "photo",
+   "lang": "uzc",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 17.6,
+    "route": "ocr",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 174,
+    "rows_parsed": 146,
+    "rows_matched": 38,
+    "cat_ok": 22,
+    "date_exact": 8,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": false,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.21839080459770116,
+    "metric_err": {
+     "op_inflow_avg": 3.6124526953213736,
+     "net_cf_avg": 0.19142614217626908,
+     "top1_share": 0.6320607832011759
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 944.91,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": false
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.76,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": false,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700051,
+   "degrade": null,
+   "lang": "ru",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.08,
+    "route": "text_layer",
+    "pages": 8,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 241,
+    "rows_parsed": 241,
+    "rows_matched": 241,
+    "cat_ok": 241,
+    "date_exact": 241,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700052,
+   "degrade": "scan",
+   "lang": "ru",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 2726.77,
+    "route": "ocr",
+    "pages": 15,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 435,
+    "rows_parsed": 431,
+    "rows_matched": 416,
+    "cat_ok": 410,
+    "date_exact": 339,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": false,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": false,
+    "flagged": true,
+    "rows_recall_case": 0.9563218390804598,
+    "metric_err": {
+     "op_inflow_avg": 0.03774867982482729,
+     "net_cf_avg": 0.286523631631611,
+     "top1_share": 0.10827680240191728
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 4.35,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 5.29,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700053,
+   "degrade": "photo",
+   "lang": "ru",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 1159.95,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 154,
+    "rows_parsed": 143,
+    "rows_matched": 59,
+    "cat_ok": 56,
+    "date_exact": 29,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.38311688311688313,
+    "metric_err": {
+     "op_inflow_avg": 2.3966712412281015,
+     "net_cf_avg": 1.1396556060066925,
+     "top1_share": 0.23404168128988445
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 6.97,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": false,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 8.56,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700054,
+   "degrade": null,
+   "lang": "uz",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.04,
+    "route": "text_layer",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 149,
+    "rows_parsed": 149,
+    "rows_matched": 149,
+    "cat_ok": 149,
+    "date_exact": 149,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 5,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700055,
+   "degrade": "scan",
+   "lang": "uz",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 1575.48,
+    "route": "ocr",
+    "pages": 7,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 267,
+    "rows_parsed": 267,
+    "rows_matched": 263,
+    "cat_ok": 250,
+    "date_exact": 237,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9850187265917603,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.21545145072797842,
+     "top1_share": 0.04339598599880322
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1026.78,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.63,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700056,
+   "degrade": "photo",
+   "lang": "uz",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 3546.01,
+    "route": "ocr",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "rows_truth": 204,
+    "rows_parsed": 164,
+    "rows_matched": 100,
+    "cat_ok": 60,
+    "date_exact": 27,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": false,
+     "period_start": false,
+     "period_end": false
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.49019607843137253,
+    "metric_err": {
+     "op_inflow_avg": 0.3629324109114211,
+     "net_cf_avg": 0.5671394933165761,
+     "top1_share": 1.3648552116647643
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 129.51,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": false,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.76,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700057,
+   "degrade": null,
+   "lang": "uzc",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.09,
+    "route": "text_layer",
+    "pages": 7,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 278,
+    "rows_parsed": 278,
+    "rows_matched": 278,
+    "cat_ok": 278,
+    "date_exact": 278,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700058,
+   "degrade": "scan",
+   "lang": "uzc",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 1100.03,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 164,
+    "rows_parsed": 164,
+    "rows_matched": 163,
+    "cat_ok": 132,
+    "date_exact": 145,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9939024390243902,
+    "metric_err": {
+     "op_inflow_avg": 0.019474633616628007,
+     "net_cf_avg": 0.05061283643520069,
+     "top1_share": 0.012541070850108851
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.64,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 3.2,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700059,
+   "degrade": "photo",
+   "lang": "uzc",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 3244.57,
+    "route": "ocr",
+    "pages": 8,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 315,
+    "rows_parsed": 278,
+    "rows_matched": 188,
+    "cat_ok": 146,
+    "date_exact": 119,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": false,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.5968253968253968,
+    "metric_err": {
+     "op_inflow_avg": 1.1778786851434941,
+     "net_cf_avg": 4.1709823347029475,
+     "top1_share": 0.415287956494918
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.74,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": false,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 251.55,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 1,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700060,
+   "degrade": null,
+   "lang": "ru",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.06,
+    "route": "text_layer",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 226,
+    "rows_parsed": 226,
+    "rows_matched": 226,
+    "cat_ok": 226,
+    "date_exact": 226,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700061,
+   "degrade": "scan",
+   "lang": "ru",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 2140.96,
+    "route": "ocr",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 226,
+    "rows_parsed": 222,
+    "rows_matched": 210,
+    "cat_ok": 181,
+    "date_exact": 140,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9292035398230089,
+    "metric_err": {
+     "op_inflow_avg": 0.012770263889539467,
+     "net_cf_avg": 0.06683582307133133,
+     "top1_share": 0.056840538047296246
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.57,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.39,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700062,
+   "degrade": "photo",
+   "lang": "ru",
+   "layout": "A"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 2134.76,
+    "route": "ocr",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 150,
+    "rows_parsed": 119,
+    "rows_matched": 57,
+    "cat_ok": 24,
+    "date_exact": 13,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": false,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.38,
+    "metric_err": {
+     "op_inflow_avg": 0.9271200791016404,
+     "net_cf_avg": 15.414820840648638,
+     "top1_share": 0.30756218691238346
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.82,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": false
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.54,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700063,
+   "degrade": null,
+   "lang": "uz",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.07,
+    "route": "text_layer",
+    "pages": 7,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 249,
+    "rows_parsed": 249,
+    "rows_matched": 249,
+    "cat_ok": 249,
+    "date_exact": 249,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 5,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700064,
+   "degrade": "scan",
+   "lang": "uz",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 1117.07,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 183,
+    "rows_parsed": 183,
+    "rows_matched": 181,
+    "cat_ok": 163,
+    "date_exact": 145,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9890710382513661,
+    "metric_err": {
+     "op_inflow_avg": 0.022078826715272573,
+     "net_cf_avg": 0.3840092106946399,
+     "top1_share": 0.19620703975769332
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 140.26,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 2.07,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700065,
+   "degrade": "photo",
+   "lang": "uz",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 1280.33,
+    "route": "ocr",
+    "pages": 7,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 267,
+    "rows_parsed": 137,
+    "rows_matched": 63,
+    "cat_ok": 50,
+    "date_exact": 44,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": false,
+     "period_start": false,
+     "period_end": false
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.23595505617977527,
+    "metric_err": {
+     "op_inflow_avg": 3.9230035703461095,
+     "net_cf_avg": 1.8284697634433529,
+     "top1_share": 0.20162492978324642
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 7.15,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 6.08,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": false,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700066,
+   "degrade": null,
+   "lang": "uzc",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.04,
+    "route": "text_layer",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 140,
+    "rows_parsed": 140,
+    "rows_matched": 140,
+    "cat_ok": 140,
+    "date_exact": 140,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700067,
+   "degrade": "scan",
+   "lang": "uzc",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 1278.25,
+    "route": "ocr",
+    "pages": 9,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 323,
+    "rows_parsed": 322,
+    "rows_matched": 312,
+    "cat_ok": 287,
+    "date_exact": 250,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9659442724458205,
+    "metric_err": {
+     "op_inflow_avg": 0.0700231754646319,
+     "net_cf_avg": 0.20431165190358716,
+     "top1_share": 0.05519390232133105
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 6.05,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 4.85,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700068,
+   "degrade": "photo",
+   "lang": "uzc",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 539.75,
+    "route": "ocr",
+    "pages": 4,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 159,
+    "rows_parsed": 70,
+    "rows_matched": 27,
+    "cat_ok": 9,
+    "date_exact": 2,
+    "hdr": {
+     "tin": false,
+     "account": false,
+     "opening": false,
+     "closing": true,
+     "period_start": false,
+     "period_end": false
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.16981132075471697,
+    "metric_err": {
+     "op_inflow_avg": 2.6562359204685118,
+     "net_cf_avg": 0.784606288406343,
+     "top1_share": 0.07255850444177006
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.96,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": false,
+     "tax_rate": false,
+     "employees": false
+    },
+    "tin": false
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 2.43,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 1,
+    "pii_total": 3,
+    "f": {
+     "tin": false,
+     "pinfl": false,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700069,
+   "degrade": null,
+   "lang": "ru",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.28,
+    "route": "text_layer",
+    "pages": 7,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 270,
+    "rows_parsed": 270,
+    "rows_matched": 270,
+    "cat_ok": 270,
+    "date_exact": 270,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.03,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.02,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700070,
+   "degrade": "scan",
+   "lang": "ru",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 543.45,
+    "route": "ocr",
+    "pages": 5,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 193,
+    "rows_parsed": 192,
+    "rows_matched": 176,
+    "cat_ok": 149,
+    "date_exact": 158,
+    "hdr": {
+     "tin": true,
+     "account": false,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9119170984455959,
+    "metric_err": {
+     "op_inflow_avg": 0.27715442528811685,
+     "net_cf_avg": 0.26603728376622365,
+     "top1_share": 0.1118180574516071
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 6.24,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.58,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700071,
+   "degrade": "photo",
+   "lang": "ru",
+   "layout": "B"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 1124.24,
+    "route": "ocr",
+    "pages": 7,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 244,
+    "rows_parsed": 163,
+    "rows_matched": 49,
+    "cat_ok": 34,
+    "date_exact": 9,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": false,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.20081967213114754,
+    "metric_err": {
+     "op_inflow_avg": 4.327532539597353,
+     "net_cf_avg": 1.9511417641972877,
+     "top1_share": 0.07538481192144438
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.97,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 5.65,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700072,
+   "degrade": null,
+   "lang": "uz",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.2,
+    "route": "text_layer",
+    "pages": 8,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "rows_truth": 223,
+    "rows_parsed": 223,
+    "rows_matched": 223,
+    "cat_ok": 223,
+    "date_exact": 223,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.03,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.02,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 5,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700073,
+   "degrade": "scan",
+   "lang": "uz",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 606.02,
+    "route": "ocr",
+    "pages": 8,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 234,
+    "rows_parsed": 233,
+    "rows_matched": 106,
+    "cat_ok": 100,
+    "date_exact": 91,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.452991452991453,
+    "metric_err": {
+     "op_inflow_avg": 0.1998275036650386,
+     "net_cf_avg": 27.88928356054633,
+     "top1_share": 0.0005964306827554549
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 6.18,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 5.53,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700074,
+   "degrade": "photo",
+   "lang": "uz",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 1556.65,
+    "route": "ocr",
+    "pages": 9,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 253,
+    "rows_parsed": 232,
+    "rows_matched": 94,
+    "cat_ok": 78,
+    "date_exact": 11,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": false,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.3715415019762846,
+    "metric_err": {
+     "op_inflow_avg": 5.528316515200683,
+     "net_cf_avg": 9.879337675472813,
+     "top1_share": 1.237286114558315
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 2.21,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.9,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 5,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700075,
+   "degrade": null,
+   "lang": "uzc",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.27,
+    "route": "text_layer",
+    "pages": 8,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 229,
+    "rows_parsed": 229,
+    "rows_matched": 229,
+    "cat_ok": 229,
+    "date_exact": 229,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.03,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700076,
+   "degrade": "scan",
+   "lang": "uzc",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 968.96,
+    "route": "ocr",
+    "pages": 7,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "rows_truth": 208,
+    "rows_parsed": 206,
+    "rows_matched": 195,
+    "cat_ok": 168,
+    "date_exact": 133,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9375,
+    "metric_err": {
+     "op_inflow_avg": 0.1378875885967399,
+     "net_cf_avg": 0.25513868295116754,
+     "top1_share": 0.4509762710751881
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.74,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.5,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700077,
+   "degrade": "photo",
+   "lang": "uzc",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 972.45,
+    "route": "ocr",
+    "pages": 9,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 266,
+    "rows_parsed": 245,
+    "rows_matched": 44,
+    "cat_ok": 38,
+    "date_exact": 14,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": false,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.16541353383458646,
+    "metric_err": {
+     "op_inflow_avg": 1.6430539005570657,
+     "net_cf_avg": 4.658015268190506,
+     "top1_share": 0.2051612326475564
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.7,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": false,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.56,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": false,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700078,
+   "degrade": null,
+   "lang": "ru",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 0.09,
+    "route": "text_layer",
+    "pages": 7,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 198,
+    "rows_parsed": 198,
+    "rows_matched": 198,
+    "cat_ok": 198,
+    "date_exact": 198,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": false,
+    "rows_recall_case": 1.0,
+    "metric_err": {
+     "op_inflow_avg": 0.0,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.0
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 0.01,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 0.0,
+    "route": "text_layer",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700079,
+   "degrade": "scan",
+   "lang": "ru",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 12.03,
+    "route": "ocr",
+    "pages": 6,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 174,
+    "rows_parsed": 174,
+    "rows_matched": 167,
+    "cat_ok": 167,
+    "date_exact": 166,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": true,
+    "flagged": true,
+    "rows_recall_case": 0.9597701149425287,
+    "metric_err": {
+     "op_inflow_avg": 0.30083319491245936,
+     "net_cf_avg": 0.0,
+     "top1_share": 0.07766272636333144
+    },
+    "recon_verdict_ok": true
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.76,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": true,
+     "rev_q2": true,
+     "rev_total": true,
+     "tax_amount": true,
+     "tax_rate": true,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.34,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 3,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ },
+ {
+  "cfg": {
+   "seed": 700080,
+   "degrade": "photo",
+   "lang": "ru",
+   "layout": "C"
+  },
+  "docs": {
+   "statement": {
+    "cls_ok": true,
+    "seconds": 17.63,
+    "route": "ocr",
+    "pages": 8,
+    "pii_leaks": 0,
+    "pii_total": 2,
+    "rows_truth": 235,
+    "rows_parsed": 209,
+    "rows_matched": 41,
+    "cat_ok": 36,
+    "date_exact": 4,
+    "hdr": {
+     "tin": true,
+     "account": true,
+     "opening": true,
+     "closing": true,
+     "period_start": true,
+     "period_end": true
+    },
+    "chain_ok": false,
+    "flagged": true,
+    "rows_recall_case": 0.17446808510638298,
+    "metric_err": {
+     "op_inflow_avg": 2.4279363600706594,
+     "net_cf_avg": 2.1075857144195322,
+     "top1_share": 0.1583468235232869
+    },
+    "recon_verdict_ok": false
+   },
+   "declaration": {
+    "cls_ok": true,
+    "seconds": 1.66,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 1,
+    "f": {
+     "rev_q1": false,
+     "rev_q2": true,
+     "rev_total": false,
+     "tax_amount": true,
+     "tax_rate": false,
+     "employees": true
+    },
+    "tin": true
+   },
+   "registration": {
+    "cls_ok": true,
+    "seconds": 1.4,
+    "route": "ocr",
+    "pages": 1,
+    "pii_leaks": 0,
+    "pii_total": 4,
+    "f": {
+     "tin": true,
+     "pinfl": true,
+     "reg_date": true
+    }
+   }
+  }
+ }
+]
